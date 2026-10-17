@@ -49,7 +49,7 @@ python scripts/reproduce.py --output reproductions/evaluate --workers 4
 python scripts/train_tscp2.py --output reproductions/tscp2-training
 ```
 
-TSCP2使用2个CPU线程，本机完整训练约5小时。每次运行使用新的输出目录；`--keep-scores` 可保留评分中间数组。运行结束自动核验，也可执行 `python scripts/verify.py reproductions/full-run`；测试命令为 `python -m pytest -q`。
+每次运行使用新的输出目录；`--keep-scores` 可保留评分中间数组。运行结束自动核验，也可执行 `python scripts/verify.py reproductions/full-run`；测试命令为 `python -m pytest -q`。
 
 ## 实验结果
 
