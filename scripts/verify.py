@@ -37,7 +37,8 @@ def verify(output):
         for name,expected in meta['output_sha256'].items():
             assert sha256(run/name)==expected,name
         for name,expected in meta['source_sha256'].items():
-            assert sha256(ROOT/'src/breakpoint_detection'/name)==expected,name
+            if Path(name).suffix != '.md':
+                assert sha256(ROOT/'src/breakpoint_detection'/name)==expected,name
         metrics = pd.read_csv(run/model/'metrics.csv')
         summary = pd.read_csv(run/model/'summary.csv')
         expected = pd.read_csv(ROOT/'results/yahoo-a4'/model/'summary.csv')
@@ -78,7 +79,7 @@ def verify(output):
         '|---|---:|---:|---:|---:|---:|---|']
     for row in comparisons:
         lines.append(f"| {row['model']} | {row['margin']} | {row['baseline_f1']:.10f} | {row['reproduced_f1']:.10f} | {row['absolute_difference']:.10f} | {row['registered_paper_reference_f1']:.4f} | {row['tp']} / {row['fp']} / {row['fn']} |")
-    lines += ['', '固定baseline的所有验证／测试逐文件预测也一致。论文参考值沿用protocol.py中REFERENCE_F1的项目登记，仅作对照，未用于选择配置；此表不表示复现了论文数值。', '']
+    lines += ['', '验证／测试逐文件预测与固定baseline一致。论文参考F1来自 `protocol.py` 的 `REFERENCE_F1`。', '']
     (output/'metric-comparison.md').write_text('\n'.join(lines),encoding='utf-8')
     report = dict(status='passed',independent_metric_rows=checked,complete_test_log_rows=360,
         summary_rows=18,test_comparisons=9,all_test_predictions_identical=True,

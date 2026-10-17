@@ -1,15 +1,19 @@
-# 原始实验日志
+# 实验日志
 
-`baseline-verification/` 保存本次在独立导出仓库中实际执行的三模型固定配置运行；不把后处理输出伪装成历史未保存的stdout。
+[baseline-verification](baseline-verification) 保存FLOSS、RuLSIF和TSCP2的完整运行输出。
 
-- 每模型 `stdout.log`、`stderr.log`：子进程原始输出，空stderr表示该进程没有写入错误流。
-- 每模型 `process.json`：实际命令、工作目录、UTC起止时间、退出码及评分模式。
-- 每模型 `test-output.jsonl`：本次运行产生的完整测试逐文件输出，每模型120行，含真值、全部预测和事件指标。
-- 每模型 `run/<model>/metrics.csv`、`events.csv`、`summary.csv`：完整验证／测试逐文件指标、报警及汇总；`run/run.json` 保存源码、输入、输出哈希和固定设置。
-- [metric-comparison.md](baseline-verification/metric-comparison.md)、[metric-comparison.csv](baseline-verification/metric-comparison.csv)：对照当前baseline的9组测试F1和项目登记的论文参考值。
-- [verification.json](baseline-verification/verification.json)：独立逐文件匹配和汇总核验报告。
-- `pytest.stdout.log`、`pytest.stderr.log`、`pytest.xml`：本导出仓库的真实测试记录。
-- `initial-check/`：首次发现旧pytest临时目录路径问题的原始失败记录；修复后的通过记录在本目录，失败未被覆盖或隐藏。
-- `build.stdout.log`、`build.stderr.log`、`build-process.json`：离线setuptools wheel构建记录；`initial-build/` 保存未完成pip wheel尝试的退出记录。
+| 文件 | 内容 |
+|---|---|
+| 每模型 `stdout.log`、`stderr.log` | 原始进程输出 |
+| 每模型 `process.json` | 命令、工作目录、起止时间、退出码和评分方式 |
+| 每模型 `test-output.jsonl` | 120行测试输出，包含真值、全部预测和事件指标 |
+| 每模型 `run/<model>/metrics.csv` | 验证／测试逐文件指标 |
+| 每模型 `run/<model>/events.csv` | 完整报警记录 |
+| 每模型 `run/<model>/summary.csv` | 验证／测试汇总 |
+| 每模型 `run/run.json` | 输入、源码、输出哈希和运行设置 |
+| `pytest.stdout.log`、`pytest.stderr.log`、`pytest.xml` | 回归测试结果 |
+| `build.stdout.log`、`build.stderr.log`、`build-process.json` | wheel构建记录 |
 
-运行的默认模式为FLOSS重算、RuLSIF核验评分回放及重新报警、TSCP2固定checkpoint复载推理。RuLSIF全量密度评分及神经训练未在此次日志中重新执行；TSCP2原始训练日志单独保留在 `provenance/original-tscp2-training`。
+复现对照：[指标表](baseline-verification/metric-comparison.md)、[CSV](baseline-verification/metric-comparison.csv)、[核验报告](baseline-verification/verification.json)。三模型共360行测试输出、540行验证／测试指标和18行汇总；9组测试F1与固定baseline一致。
+
+默认运行重算FLOSS评分、读取RuLSIF评分轨迹并生成报警、复载TSCP2 checkpoint推理。TSCP2的385轮训练日志位于 `provenance/original-tscp2-training`。

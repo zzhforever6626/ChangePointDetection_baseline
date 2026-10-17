@@ -1,5 +1,5 @@
 # Tested standalone inference interpreter: CPython 3.9.25, Windows x86_64.
-# Runtime import is 1.26.4; legacy environment's numpy distribution metadata is stale.
+# NumPy version used for checkpoint inference.
 numpy==1.26.4
 filelock==3.19.1
 typing_extensions==4.15.0

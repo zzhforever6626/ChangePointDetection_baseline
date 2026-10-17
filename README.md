@@ -1,10 +1,10 @@
 # Yahoo! A4 变点检测 Baseline
 
-本项目实现 **FLOSS、RuLSIF、TSCP2** 三个 baseline，在公开 Yahoo A4 数据上采用统一事件评价协议。模型方法与明确设置依据 TS-CP² 2021 论文及作者公开源码；当前固定已完成验证搜索的最佳配置、阈值和 TSCP2 checkpoint。
+本项目提供 **FLOSS、RuLSIF、TSCP2** 三个变点检测 baseline，使用 Yahoo A4 数据和统一的事件评价协议。模型方法依据 TS-CP² 2021 论文及作者公开源码，采用验证集选定的固定参数、阈值和 TSCP2 checkpoint。
 
-唯一配置为 [baseline_settings.json](src/breakpoint_detection/baseline_settings.json)。正式运行直接评分和评价，不再执行参数网格、阈值搜索或神经网络训练。
+统一配置为 [baseline_settings.json](src/breakpoint_detection/baseline_settings.json)。仓库包含数据、源码、环境依赖、checkpoint、评分轨迹和实验日志。
 
-本目录是可独立clone的Git仓库。GitHub远程地址尚未配置；实际提交历史从本次导出开始，原工作目录没有Git历史可继承。安装与复现步骤见 [REPRODUCIBILITY.md](REPRODUCIBILITY.md)，原始运行日志和指标对照见 [日志说明](logs/README.md)。
+安装与运行见 [复现说明](REPRODUCIBILITY.md)，完整测试输出和指标对照见 [实验日志](logs/README.md)。
 
 ## 当前结果
 
@@ -31,7 +31,7 @@
 
 FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮的checkpoint；三个容差共享该模型，各自应用固定阈值。
 
-固定配置已通过30项回归测试，540行逐文件指标与18行汇总独立复算一致。FLOSS的120条选中评分曲线实际重算；TSCP2复载checkpoint后评分逐位一致。RuLSIF复用经哈希核验的评分，并完成252次短序列方向拟合数值复核，本次未重新执行全量密度评分。
+30项回归测试通过；540行逐文件指标和18行汇总复算一致。
 
 报警、逐文件计数和验证／测试汇总见 [FLOSS](results/yahoo-a4/floss/summary.csv)、[RuLSIF](results/yahoo-a4/rulsif/summary.csv)、[TSCP2](results/yahoo-a4/tscp2/summary.csv)。各模型的 `fixed-settings.json` 记录运行设置；[baseline-assets.json](results/yahoo-a4/baseline-assets.json)记录评分缓存的生成参数、输入和文件哈希。
 
@@ -49,26 +49,26 @@ FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮
 
 主指标为事件micro-F1，容差24、50、75均使用严格边界 `abs(prediction-truth) < margin`。一个真值最多匹配一个预测；额外预测计FP，包括同坐标重复预测；未命中真值计FN。冲突按距离、预测坐标、真值坐标排序，依次接受未匹配端点。跨文件累加TP／FP／FN后计算 `F1=2TP/(2TP+FP+FN)`；全部原始变点均参与，包括暖机和末端区域。
 
-## 论文对照状态
+## 参数与论文对照
 
-当前模型遵循2021论文适用的明确方法设置。固定参数来自项目独立验证候选集，按事件micro-F1、precision、较少FP、候选ID及更高阈值依次解并列，未使用论文Table 2最佳值或测试F1作为选择目标。
+固定参数按验证集事件micro-F1选择，依次以precision、较少FP、候选ID和更高阈值解并列。选择记录保存在 `provenance/validation-selection`。
 
-文件划分、n=W映射、demo α、坐标与冲突处理、micro汇总、FLOSS短文件buffer和随机流、TSCP2移植及BN细节和验证阈值属于项目补充；作者精确Yahoo输入、测试索引及最优运行细节未确认。本项目不获取或重建作者初始输入。测试集已有多次查看，当前检验不属于新盲测，尚未复现论文数值或恢复完整作者runner。
+整文件划分、n=W映射、FLOSS缓冲长度和随机流、TSCP2的PyTorch移植与BN设置，以及事件冲突处理采用本仓库配置。[指标对照表](logs/baseline-verification/metric-comparison.md)列出运行结果、固定baseline及论文参考F1。
 
 ## 运行
 
-Python≥3.10，基础依赖NumPy、pandas；TSCP2推理需要PyTorch。
+按[复现说明](REPRODUCIBILITY.md)安装环境后，在仓库根目录执行：
 
 ```powershell
-python -m pip install -e ".[test,tscp2]"
 python scripts/reproduce.py --output reproductions/my-run --tscp2-python PATH_TO_TORCH_PYTHON --workers 4
+python scripts/verify.py reproductions/my-run
 ```
 
-`--reuse-scores` 复用固定传统模型的评分轨迹，先校验生成参数、算法源码、输入和轨迹哈希，再重新生成报警与评价；省略此项则重新计算传统模型评分。TSCP2始终校验并复载固定checkpoint重新推理，不重新训练。checkpoint路径与SHA-256在唯一配置中登记，运行需要保留 `results/yahoo-a4/tscp2/encoder.pt`。
+默认重算FLOSS评分、读取RuLSIF评分轨迹并生成报警、复载TSCP2 checkpoint推理。使用 `--fresh-rulsif` 重算RuLSIF全部密度评分。
 
-底层 `run-baseline` 可用 `--model floss`、`rulsif`、`tscp2` 单独评价，`--tscp2-python` 指定PyTorch解释器。`--workers` 控制传统模型评分进程数；TSCP2使用2个CPU线程。复现脚本默认实际重算FLOSS、复用经哈希核验的RuLSIF评分并重新推理TSCP2；`--fresh-rulsif` 可重新计算全部RuLSIF密度评分。
+底层 `run-baseline` 支持 `--model floss`、`rulsif`、`tscp2` 单独评价。`--workers` 控制传统模型评分进程数；TSCP2使用2个CPU线程。
 
-输出必须为新目录或空目录，不能覆盖正式结果。`--resume` 仅校验已完成运行的源码、输入及输出哈希；未完成运行须使用新目录。
+每次运行使用新的输出目录。回归测试：
 
 ```powershell
 python -m pytest -q

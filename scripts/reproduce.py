@@ -42,7 +42,7 @@ def main():
     metadata = dict(started_at=datetime.now(timezone.utc).isoformat(),
         baseline_environment=runtime(sys.executable),neural_environment=runtime(args.tscp2_python,True),
         fixed_settings_sha256=sha256(ROOT/'src/breakpoint_detection/baseline_settings.json'),
-        scope='new actual execution in exported repository; no historical console output reconstructed',
+        scope='fixed baseline evaluation',
         modes=dict(floss='fresh full validation/test scoring',rulsif='fresh full scoring' if args.fresh_rulsif else 'hash-verified score replay; alarms and metrics recomputed',
             tscp2='fixed checkpoint reload and inference; no training'))
     write(output/'environment.json',metadata)
@@ -57,7 +57,7 @@ def main():
         process_meta = dict(command=command,cwd=str(ROOT),started_at=datetime.now(timezone.utc).isoformat(),
             mode=metadata['modes'][model])
         write(destination/'process.json',process_meta)
-        # Never synthesize or overwrite process stdout/stderr.
+        # Capture each process's output streams.
         with (destination/'stdout.log').open('w',encoding='utf-8',newline='\n') as stdout, \
              (destination/'stderr.log').open('w',encoding='utf-8',newline='\n') as stderr:
             result = subprocess.run(command,cwd=ROOT,env=env,stdout=stdout,stderr=stderr)
@@ -65,7 +65,7 @@ def main():
         write(destination/'process.json',process_meta)
         if result.returncode:
             raise RuntimeError(f'{model} failed; see {destination}/stderr.log')
-        # Full per-file output is emitted from the just-completed run, not from baseline results.
+        # Export complete per-file test predictions and metrics.
         import pandas as pd
         metrics = pd.read_csv(destination/'run'/model/'metrics.csv')
         with (destination/'test-output.jsonl').open('w',encoding='utf-8',newline='\n') as log:
