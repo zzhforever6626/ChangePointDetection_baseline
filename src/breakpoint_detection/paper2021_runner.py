@@ -221,7 +221,7 @@ def run(args):
     official = PACKAGE.parents[1]/'results/yahoo-a4'
     if output == official or official in output.parents:
         raise ValueError('output cannot overwrite official results')
-    models = ['floss', 'rulsif', 'tscp2'] if args.model == 'all' else ['floss' if args.model == 'floss-author' else args.model]
+    models = ['floss', 'rulsif', 'tscp2'] if args.model == 'all' else [args.model]
     files, series, _ = load_dataset(args.input, 'source-pooled')
     input_hashes = {str(p.resolve()): sha256(p) for p in files}
     source = source_hashes()

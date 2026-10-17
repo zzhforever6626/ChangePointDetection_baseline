@@ -7,7 +7,7 @@ PAPER_MARGINS=MARGINS
 def parser():
     result = argparse.ArgumentParser(description='Evaluate fixed FLOSS, RuLSIF and TSCP2 baselines')
     result.add_argument('input', type=Path)
-    result.add_argument('--model', choices=('all','floss','floss-author','rulsif','tscp2'), default='all')
+    result.add_argument('--model', choices=('all','floss','rulsif','tscp2'), default='all')
     result.add_argument('--protocol', choices=('tscp2-2021-yahoo',), default='tscp2-2021-yahoo')
     result.add_argument('--output', type=Path, default=Path('experiments/runs/fixed-baselines'))
     result.add_argument('--workers', type=int, default=3)

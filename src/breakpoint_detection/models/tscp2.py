@@ -1,8 +1,7 @@
 """Paper-first PyTorch port of cruiseresearchgroup/TSCP2 and keras-tcn.
 
-Standalone worker supports an external PyTorch interpreter without importing
-PyTorch into the NumPy baseline environment. Original sources and the MIT
-notice for keras-tcn are retained under reference_sources/tscp2.
+The standalone worker trains and scores the fixed network. The MIT notice for
+keras-tcn is retained under reference_sources/tscp2/keras-tcn/LICENSE.
 """
 import argparse
 import csv

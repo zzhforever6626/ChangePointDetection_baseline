@@ -22,11 +22,30 @@ print(json.dumps(dict(python=sys.version,executable=sys.executable,platform=plat
 '''
     return json.loads(subprocess.check_output([sys.executable,'-c',code], text=True, encoding='utf-8'))
 
+def compact_run(directory):
+    """Keep the complete output tables while discarding intermediate arrays."""
+    directory = Path(directory).resolve()
+    meta_path = directory/'run.json'
+    meta = json.loads(meta_path.read_text(encoding='utf-8'))
+    arrays = list(directory.rglob('*.npz'))
+    for path in arrays:
+        if not path.resolve().is_relative_to(directory):
+            raise ValueError('intermediate array outside run directory')
+        path.unlink()
+    for path in sorted((p for p in directory.rglob('*') if p.is_dir()),key=lambda p:len(p.parts),reverse=True):
+        if not any(path.iterdir()):
+            path.rmdir()
+    meta['output_sha256'] = {name:value for name,value in meta['output_sha256'].items()
+                             if not name.endswith('.npz')}
+    meta['output_layout'] = 'metrics-only'
+    write(meta_path,meta)
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--workers',type=int,default=4)
     parser.add_argument('--fresh-rulsif',action='store_true',help='recompute all density scores instead of verified cached scores')
+    parser.add_argument('--keep-scores',action='store_true',help='keep intermediate score arrays in the run output')
     args = parser.parse_args()
     output = args.output.resolve()
     if output.exists() and any(output.iterdir()):
@@ -69,6 +88,8 @@ def main():
                 if pd.isna(row['mean_delay']):
                     row['mean_delay'] = None
                 log.write(json.dumps(row,ensure_ascii=False,allow_nan=False)+'\n')
+        if not args.keep_scores:
+            compact_run(destination/'run')
         print(f'{model}: exit=0, complete test rows={sum(metrics.phase=="test")}',flush=True)
     metadata.update(finished_at=datetime.now(timezone.utc).isoformat(),status='complete')
     write(output/'environment.json',metadata)

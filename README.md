@@ -4,7 +4,7 @@
 
 统一配置为 [baseline_settings.json](src/breakpoint_detection/baseline_settings.json)。仓库包含数据、源码、环境依赖、checkpoint、评分轨迹和实验日志。
 
-三模型共用Python 3.10环境，全部依赖固定在 [requirements.txt](requirements.txt)。安装与运行见 [复现说明](REPRODUCIBILITY.md)，完整测试输出和指标对照见 [实验日志](logs/README.md)。
+三模型共用Python 3.10环境，全部依赖固定在 [requirements.txt](requirements.txt)。安装命令见[环境与运行](#环境与运行)，完整测试输出和指标对照见 [实验日志](logs/README.md)。
 
 ## 仓库内容
 
@@ -17,7 +17,7 @@
 | `data/A4Benchmark/` | 100条Yahoo A4原始序列 |
 | `results/yahoo-a4/` | 固定checkpoint、评分轨迹和模型结果 |
 | `logs/` | 原始实验输出、逐文件预测和指标汇总 |
-| `experiments/tests/baseline/` | 回归测试 |
+| `tests/` | 回归测试 |
 
 ## 当前结果
 
@@ -70,9 +70,24 @@ FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮
 
 整文件划分、n=W映射、FLOSS缓冲长度和随机流、TSCP2的PyTorch移植与BN设置，以及事件冲突处理采用本仓库配置。[指标对照表](logs/baseline-verification/metric-comparison.md)列出实验F1、论文参考F1和事件计数。
 
-## 运行
+## 环境与运行
 
-按[复现说明](REPRODUCIBILITY.md)安装环境后，在仓库根目录执行：
+执行平台为Windows x86_64，三个模型均使用CPU。
+
+| Python | NumPy | pandas | PyTorch |
+|---|---|---|---|
+| 3.10.21 | 2.2.6 | 2.3.3 | 2.7.1+cpu |
+
+在仓库根目录创建环境并安装依赖：
+
+```powershell
+py -3.10 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m pip install --no-deps --no-build-isolation -e .
+```
+
+运行与核验：
 
 ```powershell
 python scripts/reproduce.py --output reproductions/my-run --workers 4
@@ -81,6 +96,8 @@ python scripts/verify.py reproductions/my-run
 
 默认重算FLOSS评分、读取RuLSIF评分轨迹并生成报警、复载TSCP2 checkpoint推理。使用 `--fresh-rulsif` 重算RuLSIF全部密度评分。
 
+输出保留全部预测、报警、指标和原始stdout／stderr。使用 `--keep-scores` 可同时保留评分与输入中间数组。
+
 底层 `run-baseline` 支持 `--model floss`、`rulsif`、`tscp2` 单独评价。`--workers` 控制传统模型评分进程数；TSCP2使用2个CPU线程。
 
 每次运行使用新的输出目录。回归测试：
@@ -88,3 +105,11 @@ python scripts/verify.py reproductions/my-run
 ```powershell
 python -m pytest -q
 ```
+
+## 实验输出
+
+每个模型的 `stdout.log`、`stderr.log` 保存原始输出，`process.json` 记录命令、运行时间和退出码。`test-output.jsonl` 包含40条测试序列×3个容差，共120行完整测试输出。
+
+`run/<model>/metrics.csv`、`events.csv` 和 `summary.csv` 分别保存验证／测试逐文件指标、全部报警和汇总；`run/run.json` 保存实际配置与保留文件的校验信息。核验脚本检查540行逐文件指标和18行汇总，并生成9组实验F1与论文参考F1的对照表。
+
+数据和参考代码链接见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

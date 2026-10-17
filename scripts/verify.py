@@ -34,6 +34,9 @@ def verify(output):
         meta = json.loads((run/'run.json').read_text(encoding='utf-8'))
         assert meta['status']=='complete'
         assert meta['settings']==SETTINGS
+        if meta.get('output_layout')=='metrics-only':
+            assert not list(run.rglob('*.npz'))
+            assert all(not name.endswith('.npz') for name in meta['output_sha256'])
         for name,expected in meta['output_sha256'].items():
             assert sha256(run/name)==expected,name
         for name,expected in meta['source_sha256'].items():

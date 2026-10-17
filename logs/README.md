@@ -12,8 +12,9 @@
 | 每模型 `run/<model>/summary.csv` | 验证／测试汇总 |
 | 每模型 `run/run.json` | 输入、源码、输出哈希和运行设置 |
 | `pytest.stdout.log`、`pytest.stderr.log`、`pytest.xml` | 回归测试结果 |
-| `build.stdout.log`、`build.stderr.log`、`build-process.json` | wheel构建记录 |
 
 实验结果：[指标表](baseline-verification/metric-comparison.md)、[CSV](baseline-verification/metric-comparison.csv)、[核验报告](baseline-verification/verification.json)。三模型共360行测试输出、540行验证／测试指标和18行汇总，指标表列出9组测试结果与论文参考F1。
 
 默认运行重算FLOSS评分、读取RuLSIF评分轨迹并生成报警、复载TSCP2 checkpoint推理。模型参数与随机种子见 `src/breakpoint_detection/baseline_settings.json`。
+
+日志保留完整预测、报警和指标，评分中间数组默认在运行结束后清理。复现命令加 `--keep-scores` 可保留这些数组。

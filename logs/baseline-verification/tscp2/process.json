@@ -14,8 +14,8 @@
     "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\logs\\baseline-verification\\tscp2\\run"
   ],
   "cwd": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction",
-  "started_at": "2026-10-17T11:19:53.243637+00:00",
+  "started_at": "2026-10-17T11:39:07.732341+00:00",
   "mode": "fixed checkpoint reload and inference; no training",
   "exit_code": 0,
-  "finished_at": "2026-10-17T11:20:30.762989+00:00"
+  "finished_at": "2026-10-17T11:39:39.227942+00:00"
 }

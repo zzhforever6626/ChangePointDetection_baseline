@@ -7,6 +7,5 @@ __pycache__/
 build/
 dist/
 reproductions/
-experiments/artifacts/
 .idea/
 .vscode/
