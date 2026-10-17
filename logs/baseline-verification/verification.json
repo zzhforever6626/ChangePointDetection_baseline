@@ -3,7 +3,5 @@
   "independent_metric_rows": 540,
   "complete_test_log_rows": 360,
   "summary_rows": 18,
-  "test_comparisons": 9,
-  "all_test_predictions_identical": true,
-  "max_absolute_f1_difference": 0.0
+  "test_results": 9
 }

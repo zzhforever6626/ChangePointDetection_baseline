@@ -53,7 +53,7 @@ FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮
 
 固定参数按验证集事件micro-F1选择，依次以precision、较少FP、候选ID和更高阈值解并列。选择记录保存在 `provenance/validation-selection`。
 
-整文件划分、n=W映射、FLOSS缓冲长度和随机流、TSCP2的PyTorch移植与BN设置，以及事件冲突处理采用本仓库配置。[指标对照表](logs/baseline-verification/metric-comparison.md)列出运行结果、固定baseline及论文参考F1。
+整文件划分、n=W映射、FLOSS缓冲长度和随机流、TSCP2的PyTorch移植与BN设置，以及事件冲突处理采用本仓库配置。[指标对照表](logs/baseline-verification/metric-comparison.md)列出实验F1、论文参考F1和事件计数。
 
 ## 运行
 

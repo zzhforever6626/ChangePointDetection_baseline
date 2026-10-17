@@ -55,9 +55,9 @@ python scripts/verify.py reproductions/my-run
 - `test-output.jsonl`：40条测试序列×3个容差，共120行完整测试输出。
 - `run/<model>/metrics.csv`、`events.csv`、`summary.csv`：逐文件指标、报警和汇总。
 
-`scripts/verify.py` 独立核验540行验证／测试指标、18行汇总，以及9组测试指标对照，生成 `verification.json`、`metric-comparison.csv` 和 `metric-comparison.md`。
+`scripts/verify.py` 独立核验540行验证／测试指标和18行汇总，生成 `verification.json`、`metric-comparison.csv` 和 `metric-comparison.md`。指标表包含9组测试结果及对应论文参考F1。
 
-已保存的完整运行位于 [logs/baseline-verification](logs/baseline-verification)，其测试预测与 `results/yahoo-a4` 中的固定baseline一致。
+完整运行记录位于 [logs/baseline-verification](logs/baseline-verification)，逐文件指标和报警保存在 `results/yahoo-a4`。
 
 ## 数据与配置
 

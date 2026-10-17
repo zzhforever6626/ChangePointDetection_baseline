@@ -14,6 +14,6 @@
 | `pytest.stdout.log`、`pytest.stderr.log`、`pytest.xml` | 回归测试结果 |
 | `build.stdout.log`、`build.stderr.log`、`build-process.json` | wheel构建记录 |
 
-复现对照：[指标表](baseline-verification/metric-comparison.md)、[CSV](baseline-verification/metric-comparison.csv)、[核验报告](baseline-verification/verification.json)。三模型共360行测试输出、540行验证／测试指标和18行汇总；9组测试F1与固定baseline一致。
+实验结果：[指标表](baseline-verification/metric-comparison.md)、[CSV](baseline-verification/metric-comparison.csv)、[核验报告](baseline-verification/verification.json)。三模型共360行测试输出、540行验证／测试指标和18行汇总，指标表列出9组测试结果与论文参考F1。
 
 默认运行重算FLOSS评分、读取RuLSIF评分轨迹并生成报警、复载TSCP2 checkpoint推理。TSCP2的385轮训练日志位于 `provenance/original-tscp2-training`。

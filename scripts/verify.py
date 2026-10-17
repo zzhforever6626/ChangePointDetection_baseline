@@ -1,4 +1,4 @@
-"""Audit all test outputs independently and compare with the fixed baseline."""
+"""Verify experimental outputs and report test metrics with paper references."""
 import argparse
 import json
 from pathlib import Path
@@ -69,21 +69,17 @@ def verify(output):
             baseline = expected[(expected.phase==row.phase)&(expected.detection_margin==row.detection_margin)].iloc[0]
             assert abs(row.f1-baseline.f1)<1e-12
             if row.phase=='test':
-                comparisons.append(dict(model=model,margin=row.detection_margin,baseline_f1=baseline.f1,
-                    reproduced_f1=row.f1,absolute_difference=abs(row.f1-baseline.f1),tp=tp,fp=fp,fn=fn,
-                    registered_paper_reference_f1=REFERENCE_F1[model][row.detection_margin],
-                    difference_from_registered_paper_f1=row.f1-REFERENCE_F1[model][row.detection_margin],
-                    exact_predictions=True))
+                comparisons.append(dict(model=model,margin=row.detection_margin,f1=row.f1,
+                    paper_reference_f1=REFERENCE_F1[model][row.detection_margin],tp=tp,fp=fp,fn=fn))
     pd.DataFrame(comparisons).to_csv(output/'metric-comparison.csv',index=False)
-    lines = ['# 复现指标对照','', '| 模型 | 容差 | 固定baseline F1 | 本次复现 F1 | 绝对差 | 项目登记论文参考F1 | TP / FP / FN |',
-        '|---|---:|---:|---:|---:|---:|---|']
+    lines = ['# 实验指标与论文对照','', '| 模型 | 容差 | 实验 F1 | 论文参考 F1 | TP / FP / FN |',
+        '|---|---:|---:|---:|---|']
     for row in comparisons:
-        lines.append(f"| {row['model']} | {row['margin']} | {row['baseline_f1']:.10f} | {row['reproduced_f1']:.10f} | {row['absolute_difference']:.10f} | {row['registered_paper_reference_f1']:.4f} | {row['tp']} / {row['fp']} / {row['fn']} |")
-    lines += ['', '验证／测试逐文件预测与固定baseline一致。论文参考F1来自 `protocol.py` 的 `REFERENCE_F1`。', '']
+        lines.append(f"| {row['model']} | {row['margin']} | {row['f1']:.10f} | {row['paper_reference_f1']:.4f} | {row['tp']} / {row['fp']} / {row['fn']} |")
+    lines += ['', '论文参考F1来自 `protocol.py` 的 `REFERENCE_F1`。', '']
     (output/'metric-comparison.md').write_text('\n'.join(lines),encoding='utf-8')
     report = dict(status='passed',independent_metric_rows=checked,complete_test_log_rows=360,
-        summary_rows=18,test_comparisons=9,all_test_predictions_identical=True,
-        max_absolute_f1_difference=max(r['absolute_difference'] for r in comparisons))
+        summary_rows=18,test_results=len(comparisons))
     (output/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 
