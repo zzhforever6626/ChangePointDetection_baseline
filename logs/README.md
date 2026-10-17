@@ -14,4 +14,4 @@
 
 TSCP2从头训练（种子0，385轮）：[逐轮损失与相似度](tscp2-training/training.csv) · [stdout](tscp2-training/stdout.log) · [stderr](tscp2-training/stderr.log) · [训练命令](tscp2-training/process.json) · [训练配置](tscp2-training/training-config.json) · [环境与训练汇总](tscp2-training/worker.json) · [训练后核验](tscp2-training/verification.json)。新权重的预测和指标与[正式TSCP2汇总](../results/yahoo-a4/tscp2/summary.csv)一致。
 
-参数、种子与实验命令见[项目README](../README.md)，完整配置见[baseline_settings.json](../src/breakpoint_detection/baseline_settings.json)。评分中间数组默认在运行结束后清理，运行时加 `--keep-scores` 可保留。
+参数与种子见[baseline_settings.json](../src/breakpoint_detection/baseline_settings.json)。评分中间数组默认在运行结束后清理，运行时加 `--keep-scores` 可保留。
