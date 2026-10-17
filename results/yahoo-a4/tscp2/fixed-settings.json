@@ -1,0 +1,46 @@
+{
+  "stacks": 2,
+  "filters": 64,
+  "kernel_size": 4,
+  "dilations": [
+    1,
+    4,
+    16
+  ],
+  "temperature": 0.1,
+  "max_epochs": 1600,
+  "seed": 0,
+  "training_stride": 5,
+  "inference_stride": 5,
+  "batch_norm_update_statistics": true,
+  "preprocessing": "tscp2-a4",
+  "fixed_claim": "2 TCN stacks,64 filters,kernel4,dilations1/4/16,three-layer ReLU/BN head,per-pair InfoNCE,previous W similarity means and local peaks",
+  "adapters": "PyTorch port; projection-output BN; training-phase BN updates statistics; inference uses running statistics; precise winning-run mode unpublished; stride5; 2W separation; source training-loss early stopping; validation peak threshold; no extra NMS",
+  "early_stopping": "after epoch6, four consecutive loss increases or changes<.0001; keep final checkpoint",
+  "training_budget_origin": "source stopping and 1600-epoch cap, not a stated 2021 fixed budget",
+  "by_margin": {
+    "24": {
+      "window": 32,
+      "batch_size": 32,
+      "code_size": 16,
+      "learning_rate": 0.0003,
+      "threshold": 0.5519941318780184
+    },
+    "50": {
+      "window": 32,
+      "batch_size": 32,
+      "code_size": 16,
+      "learning_rate": 0.0003,
+      "threshold": 0.5519941318780184
+    },
+    "75": {
+      "window": 32,
+      "batch_size": 32,
+      "code_size": 16,
+      "learning_rate": 0.0003,
+      "threshold": 0.45870756125077605
+    }
+  },
+  "checkpoint": "results/yahoo-a4/tscp2/encoder.pt",
+  "checkpoint_sha256": "f8fac6abac763be6080df328c8e6f3fbadb8414285fcc2fd93c04c8cb9193992"
+}

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hkbu-breakpoint-detection"
+version = "0.3.0"
+description = "Fixed validation-selected FLOSS, RuLSIF and TSCP2 baselines"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+test = ["pytest>=7.4"]
+tscp2 = ["torch>=2.2,<3"]
+legacy-stumpy = ["stumpy==1.14.1"]
+legacy-densratio = ["densratio>=0.4,<0.5"]
+
+[project.scripts]
+run-baseline = "breakpoint_detection.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+breakpoint_detection = ["baseline_settings.json", "reference_sources/source-manifest.json", "reference_sources/README.md", "reference_sources/rulsif/*.m", "reference_sources/rulsif/LICENSE", "reference_sources/rulsif/lib/*.m", "reference_sources/floss/*.m", "reference_sources/tscp2/*.py", "reference_sources/tscp2/utils/*.py", "reference_sources/tscp2/*.json", "reference_sources/tscp2/*.md", "reference_sources/tscp2/keras-tcn/*.py", "reference_sources/tscp2/keras-tcn/LICENSE"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["experiments/tests/baseline"]
+cache_dir = "experiments/artifacts/pytest-cache"
+addopts = "--basetemp=experiments/artifacts/pytest-tmp"

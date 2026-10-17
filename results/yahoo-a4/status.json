@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "protocol": "fixed-validation-best-2026-10-17",
+  "source_run": "experiments/runs/fixed-best-baselines-final-2026-10-17",
+  "training_performed": false,
+  "parameter_selection_performed": false,
+  "new_blind_test": false
+}

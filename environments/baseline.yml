@@ -1,0 +1,8 @@
+name: hkbu-baseline-repro
+channels:
+  - defaults
+dependencies:
+  - python=3.10.21
+  - pip
+  - pip:
+      - -r requirements-test.txt

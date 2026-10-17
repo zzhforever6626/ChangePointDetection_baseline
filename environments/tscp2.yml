@@ -1,0 +1,9 @@
+name: hkbu-tscp2-repro
+channels:
+  - defaults
+dependencies:
+  - python=3.9.25
+  - pip
+  - pip:
+      - -r requirements-tscp2.txt
+      - -r requirements-torch-cu128.txt

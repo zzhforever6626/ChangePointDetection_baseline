@@ -1,0 +1,54 @@
+{
+  "choices": [
+    {
+      "candidate": "w025",
+      "detection_margin": 24,
+      "window": 25,
+      "threshold": 34.97653253016169,
+      "tp": 8,
+      "fp": 23,
+      "fn": 35,
+      "precision": 0.25806451612903225,
+      "recall": 0.18604651162790697,
+      "f1": 0.21621621621621623
+    },
+    {
+      "candidate": "w025",
+      "detection_margin": 50,
+      "window": 25,
+      "threshold": 34.97653253016169,
+      "tp": 8,
+      "fp": 23,
+      "fn": 35,
+      "precision": 0.25806451612903225,
+      "recall": 0.18604651162790697,
+      "f1": 0.21621621621621623
+    },
+    {
+      "candidate": "w010",
+      "detection_margin": 75,
+      "window": 10,
+      "threshold": 52.3104435399189,
+      "tp": 13,
+      "fp": 58,
+      "fn": 30,
+      "precision": 0.18309859154929578,
+      "recall": 0.3023255813953488,
+      "f1": 0.22807017543859648
+    }
+  ],
+  "objective": {
+    "objective": "validation event micro-F1 independently per model and margin",
+    "ties": [
+      "precision",
+      "fewer FP",
+      "lexicographically smaller candidate id",
+      "higher threshold"
+    ],
+    "test_used_for_selection": false,
+    "ranking_constraints": [],
+    "paper_f1_targets": false,
+    "threshold": "all distinct validation peak scores plus endpoints; strict score > threshold",
+    "candidate_origin": "Independent project grid, not Table 2 best parameters or original author grid"
+  }
+}
