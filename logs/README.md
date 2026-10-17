@@ -1,5 +1,28 @@
 # 实验日志
 
+## 运行实验
+
+使用Python 3.10、Windows CPU环境，依赖版本固定在 [requirements.txt](../requirements.txt)。在仓库根目录执行：
+
+```powershell
+py -3.10 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install --no-deps --no-build-isolation -e .
+.\.venv\Scripts\python.exe scripts/reproduce.py --output reproductions/full-run --workers 4 --fresh-rulsif --retrain-tscp2
+```
+
+完整流程包含FLOSS评分重算、RuLSIF全部密度估计重新拟合、TSCP2从随机初始化训练及结果核验；TSCP2在本机约需5小时。每次运行使用新的输出目录。
+
+仅评估固定baseline（RuLSIF使用评分缓存、TSCP2复载已有checkpoint）：
+
+```powershell
+.\.venv\Scripts\python.exe scripts/reproduce.py --output reproductions/evaluate --workers 4
+```
+
+两种流程结束后均自动核验指标。测试命令：`.\.venv\Scripts\python.exe -m pytest -q`。
+
+## 实验输出
+
 三模型运行输出与评价结果：
 
 | 模型 | 原始日志与运行记录 | 完整测试输出 | 评价结果 |
