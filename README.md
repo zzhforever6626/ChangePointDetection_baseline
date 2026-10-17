@@ -65,8 +65,6 @@ TSCP2使用2个CPU线程，本机完整训练约5小时。每次运行使用新�
 | TSCP2 | 50 | 0.564103 | 0.464000 |
 | TSCP2 | 75 | 0.577778 | 0.529032 |
 
-TSCP2在第385轮早停；相同设置与种子下独立训练得到完全一致的84个权重及统计量张量、训练损失记录和验证／测试结果。三模型540行逐序列指标与18行汇总核验一致。
-
 详细结果见 [FLOSS](results/yahoo-a4/floss/summary.csv)、[RuLSIF](results/yahoo-a4/rulsif/summary.csv)、[TSCP2](results/yahoo-a4/tscp2/summary.csv)，论文参考指标见 [指标对照](logs/baseline-verification/metric-comparison.md)。
 
 原始运行输出见 [FLOSS日志](logs/baseline-verification/floss/stdout.log)、[RuLSIF日志](logs/baseline-verification/rulsif/stdout.log)、[TSCP2日志](logs/baseline-verification/tscp2/stdout.log)；训练过程见 [385轮训练记录](logs/tscp2-training/training.csv)及[训练核验结果](logs/tscp2-training/verification.json)。
