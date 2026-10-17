@@ -1,21 +1,17 @@
 # 实验日志
 
-[baseline-verification](baseline-verification) 保存FLOSS、RuLSIF和TSCP2的完整运行输出。
+三模型运行输出与评价结果：
 
-[tscp2-training](tscp2-training) 保存种子0从随机初始化训练的385轮记录：逐轮损失与相似度见 `training.csv`，原始输出见 `stdout.log`／`stderr.log`，训练命令、配置与环境见 `process.json`、`training-config.json`、`worker.json`，训练后核验见 `verification.json`。新权重的预测、事件计数和指标与[正式TSCP2结果](../results/yahoo-a4/tscp2)一致。
+| 模型 | 原始日志与运行记录 | 完整测试输出 | 评价结果 |
+|---|---|---|---|
+| FLOSS | [stdout](baseline-verification/floss/stdout.log) · [stderr](baseline-verification/floss/stderr.log) · [运行记录](baseline-verification/floss/process.json) | [120行测试输出](baseline-verification/floss/test-output.jsonl) | [逐序列指标](baseline-verification/floss/run/floss/metrics.csv) · [报警](baseline-verification/floss/run/floss/events.csv) · [汇总](baseline-verification/floss/run/floss/summary.csv) |
+| RuLSIF | [stdout](baseline-verification/rulsif/stdout.log) · [stderr](baseline-verification/rulsif/stderr.log) · [运行记录](baseline-verification/rulsif/process.json) | [120行测试输出](baseline-verification/rulsif/test-output.jsonl) | [逐序列指标](baseline-verification/rulsif/run/rulsif/metrics.csv) · [报警](baseline-verification/rulsif/run/rulsif/events.csv) · [汇总](baseline-verification/rulsif/run/rulsif/summary.csv) |
+| TSCP2 | [stdout](baseline-verification/tscp2/stdout.log) · [stderr](baseline-verification/tscp2/stderr.log) · [运行记录](baseline-verification/tscp2/process.json) | [120行测试输出](baseline-verification/tscp2/test-output.jsonl) | [逐序列指标](baseline-verification/tscp2/run/tscp2/metrics.csv) · [报警](baseline-verification/tscp2/run/tscp2/events.csv) · [汇总](baseline-verification/tscp2/run/tscp2/summary.csv) |
 
-| 文件 | 内容 |
-|---|---|
-| 每模型 `stdout.log`、`stderr.log` | 原始进程输出 |
-| 每模型 `process.json` | 命令、工作目录、起止时间、退出码和评分方式 |
-| 每模型 `test-output.jsonl` | 120行测试输出，包含真值、全部预测和事件指标 |
-| 每模型 `run/<model>/metrics.csv` | 验证／测试逐文件指标 |
-| 每模型 `run/<model>/events.csv` | 完整报警记录 |
-| 每模型 `run/<model>/summary.csv` | 验证／测试汇总 |
-| 每模型 `run/run.json` | 输入、源码、输出哈希和运行设置 |
+每模型120行测试输出包含40条测试序列在3个容差下的真值、全部预测和事件指标。三模型共540行验证／测试指标、18行汇总。
 
-实验结果：[指标表](baseline-verification/metric-comparison.md)、[CSV](baseline-verification/metric-comparison.csv)、[核验报告](baseline-verification/verification.json)。三模型共360行测试输出、540行验证／测试指标和18行汇总，指标表列出9组测试结果与论文参考F1。
+实验结果：[指标对照表](baseline-verification/metric-comparison.md) · [对照CSV](baseline-verification/metric-comparison.csv) · [核验报告](baseline-verification/verification.json) · [运行环境](baseline-verification/environment.json)。
 
-参数、种子与从头训练命令见 [环境与运行](../README.md#环境与运行)。
+TSCP2从头训练（种子0，385轮）：[逐轮损失与相似度](tscp2-training/training.csv) · [stdout](tscp2-training/stdout.log) · [stderr](tscp2-training/stderr.log) · [训练命令](tscp2-training/process.json) · [训练配置](tscp2-training/training-config.json) · [环境与训练汇总](tscp2-training/worker.json) · [训练后核验](tscp2-training/verification.json)。新权重的预测和指标与[正式TSCP2汇总](../results/yahoo-a4/tscp2/summary.csv)一致。
 
-日志保留完整预测、报警和指标，评分中间数组默认在运行结束后清理。复现命令加 `--keep-scores` 可保留这些数组。
+参数、种子与实验命令见[项目README](../README.md)，完整配置见[baseline_settings.json](../src/breakpoint_detection/baseline_settings.json)。评分中间数组默认在运行结束后清理，运行时加 `--keep-scores` 可保留。
