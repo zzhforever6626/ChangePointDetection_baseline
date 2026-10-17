@@ -6,6 +6,19 @@
 
 三模型共用Python 3.10环境，全部依赖固定在 [requirements.txt](requirements.txt)。安装与运行见 [复现说明](REPRODUCIBILITY.md)，完整测试输出和指标对照见 [实验日志](logs/README.md)。
 
+## 仓库内容
+
+| 路径 | 内容 |
+|---|---|
+| `src/breakpoint_detection/models/` | FLOSS、RuLSIF、TSCP2模型实现 |
+| `src/breakpoint_detection/` | 数据处理、评分、报警、评价与命令行入口 |
+| `scripts/` | 完整实验运行和指标核验脚本 |
+| `src/breakpoint_detection/baseline_settings.json` | 模型参数、实验划分、阈值与随机种子 |
+| `data/A4Benchmark/` | 100条Yahoo A4原始序列 |
+| `results/yahoo-a4/` | 固定checkpoint、评分轨迹和模型结果 |
+| `logs/` | 原始实验输出、逐文件预测和指标汇总 |
+| `experiments/tests/baseline/` | 回归测试 |
+
 ## 当前结果
 
 以下为固定配置的**事件 micro-F1**。验证集含20条序列、43个变点；测试集含40条序列、79个变点。
@@ -37,6 +50,8 @@ FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮
 
 ## 模型实现与固定设置
 
+三个模型的随机种子均为0。FLOSS按种子、文件编号和窗口派生随机流；RuLSIF每次方向拟合使用固定随机状态；TSCP2固定Python、NumPy和PyTorch随机种子。具体设置和实现分别保存在统一配置与模型代码中。
+
 - **RuLSIF**：作者相对密度比算法，λ=0.01，k=10、α=0.01；三个容差固定n=W=25／25／10。逐维样本标准差归一化、不减均值；保留算法内部五折带宽交叉验证、倍率[0.6,0.8,1,1.2,1.4]、最多100个分子核中心和未截断系数。完整双向扫描，步长1；事件坐标为比较边界s+n，另存绘图坐标s+2n+k−2。局部峰按固定阈值过滤，无额外NMS。
 - **FLOSS**：作者流式核心，z-normalized Euclidean；三个容差固定W=25／25／55，buffer800、top-k=3、闭区间±5W抑制、seed0。异常点替换后保留原尺度，加入标准差0.001的高斯扰动；随机流由种子、文件编号、窗口派生。中心评分覆盖400–1280共881点，形成截止为坐标+400；整文件结束后选点。保留源码在剩余评分全为无穷时返回首坐标的行为。
 - **TSCP2**：PyTorch实现，W=32、batch=32、code=16、lr=0.0003；2个TCN栈、64通道、kernel4、膨胀率[1,4,16]，保留残差、skip和时间／通道展平。三层投影宽度32→16→16，投影输出BN；训练时更新BN统计，推理使用运行统计。逐样本InfoNCE，温度0.1、训练／推理步长5、同文件样本对起点至少相距2W、种子0；前W个采样相似度作为移动历史。固定checkpoint来自最多1600轮、连续4轮损失上升或变化小于0.0001时停止的源码训练规则，保留最后checkpoint。
@@ -51,7 +66,7 @@ FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮
 
 ## 参数与论文对照
 
-固定参数按验证集事件micro-F1选择，依次以precision、较少FP、候选ID和更高阈值解并列。选择记录保存在 `provenance/validation-selection`。
+运行直接读取统一配置中的固定参数和阈值。
 
 整文件划分、n=W映射、FLOSS缓冲长度和随机流、TSCP2的PyTorch移植与BN设置，以及事件冲突处理采用本仓库配置。[指标对照表](logs/baseline-verification/metric-comparison.md)列出实验F1、论文参考F1和事件计数。
 

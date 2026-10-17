@@ -19,7 +19,7 @@ python -m pip install --no-deps --no-build-isolation -e .
 
 `requirements.txt` 包含运行、测试和打包依赖，PyTorch使用CPU构建。
 
-执行平台为Windows x86_64。具体版本及数值库构建信息见 `logs/baseline-verification/environment.json` 和 `provenance/environments/native-runtime.txt`。
+执行平台为Windows x86_64，实际运行版本见 `logs/baseline-verification/environment.json`。
 
 ## 运行
 
@@ -37,7 +37,7 @@ python scripts/verify.py reproductions/my-run
 | RuLSIF | 读取120条固定窗口评分轨迹，重新生成峰、报警和指标 |
 | TSCP2 | 复载固定checkpoint，对60条验证／测试序列推理 |
 
-加 `--fresh-rulsif` 可重算全部RuLSIF密度评分。TSCP2使用385轮训练得到的checkpoint，训练日志和损失曲线位于 `provenance/original-tscp2-training`。
+加 `--fresh-rulsif` 可重算全部RuLSIF密度评分。TSCP2使用385轮训练得到的checkpoint；网络、损失函数、优化器和训练过程的实现在 `src/breakpoint_detection/models/tscp2.py`。
 
 ## 输出与指标
 
@@ -55,5 +55,7 @@ python scripts/verify.py reproductions/my-run
 ## 数据与配置
 
 仓库包含100条Yahoo A4序列、模型源码、固定checkpoint和传统模型评分轨迹。统一配置为 `src/breakpoint_detection/baseline_settings.json`；`results/yahoo-a4/baseline-assets.json` 记录资产哈希。
+
+统一配置包含数据划分、预处理、窗口、报警阈值、网络结构、训练参数与随机种子。三个模型均固定seed=0，源码中保留对应随机状态的初始化和调用。
 
 数据划分、预处理、固定参数和事件评价规则见 [README](README.md)，数据与参考代码来源见 [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md)。
