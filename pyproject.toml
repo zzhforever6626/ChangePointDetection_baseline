@@ -31,5 +31,5 @@ breakpoint_detection = ["baseline_settings.json", "reference_sources/source-mani
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["experiments/tests/baseline"]
-cache_dir = "experiments/artifacts/pytest-cache"
-addopts = "--basetemp=experiments/artifacts/pytest-tmp"
+cache_dir = ".pytest_cache"
+addopts = "--basetemp=.pytest-tmp"
