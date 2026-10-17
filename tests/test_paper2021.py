@@ -2,13 +2,12 @@
 import json
 import hashlib
 import inspect
-from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
 import pandas as pd
 import pytest
 from breakpoint_detection.metrics import paper_event_metrics
-from breakpoint_detection.paper2021_runner import aggregate, execution_plan, predict, validate_settings
+from breakpoint_detection.paper2021_runner import execution_plan, predict, validate_settings
 from breakpoint_detection.protocol import SETTINGS
 from breakpoint_detection.tscp2_adapter import training_pairs, separated_batches, similarity_drop, phase_peak_scores
 
@@ -55,7 +54,7 @@ def test_run_uses_fixed_thresholds_regardless_of_labels_and_guards_resume(tmp_pa
         path.write_text('fixture',encoding='utf-8');files.append(path)
         labels=np.zeros(100,int);labels[40]=1
         series.append(SimpleNamespace(name=path.stem,values=np.arange(100.),labels=labels))
-    monkeypatch.setattr(runner,'load_dataset',lambda *a:(files,series,[]))
+    monkeypatch.setattr(runner,'load_dataset',lambda *a:(files,series))
     def scores(n):
         peaks=np.full(100,np.nan);peaks[[20,40,70]]=[.1,60.,.6]
         return [dict(scores=peaks.copy(),available=np.arange(100)+10,peaks=peaks.copy(),

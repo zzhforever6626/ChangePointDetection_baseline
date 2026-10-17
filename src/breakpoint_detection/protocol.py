@@ -6,8 +6,7 @@ from pathlib import Path
 PACKAGE = Path(__file__).resolve().parent
 SETTINGS = json.loads((PACKAGE / "baseline_settings.json").read_text(encoding="utf-8"))
 MARGINS = tuple(SETTINGS["margins"])
-PRIMARY_METRIC = SETTINGS["metric"]
-if PRIMARY_METRIC != "event_micro_f1":
+if SETTINGS["metric"] != "event_micro_f1":
     raise ValueError("The active 2021 protocol requires event micro-F1")
 REFERENCE_F1 = {
     "tscp2": {24: .6400, 50: .8104, 75: .8428},
@@ -30,15 +29,7 @@ def empty_output(path):
     output = Path(path).resolve()
     official = PACKAGE.parents[1] / "results/yahoo-a4"
     if output == official or official in output.parents:
-        raise ValueError("run output must not overwrite official results; use experiments/runs")
+        raise ValueError("run output must not overwrite official results; use reproductions/")
     if output.exists() and (not output.is_dir() or any(output.iterdir())):
         raise FileExistsError("choose a new or empty output directory; existing results are not overwritten")
     return output
-
-
-def rulsif_configuration(args=None):
-    """Return the fixed validation-selected baseline configuration."""
-    config=dict(SETTINGS['rulsif'])
-    if config['regularization'] != .01:
-        raise ValueError('2021 section 4.2 fixes RuLSIF lambda=.01')
-    return config

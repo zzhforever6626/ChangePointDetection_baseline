@@ -1,19 +1,17 @@
 """Source-derived partition boundaries and sampled detection availability."""
 from pathlib import Path
 import numpy as np
-from breakpoint_detection.source_dataset import load_dataset,phase_inputs
+from breakpoint_detection.source_dataset import load_dataset
 from breakpoint_detection.tscp2_adapter import similarity_drop,phase_peak_scores,training_pairs
 
 
 def test_pooled_split_preserves_entire_files_and_every_raw_truth():
     root=Path(__file__).resolve().parents[1]
-    files,series,splits=load_dataset(root/'data/A4Benchmark')
+    files,series=load_dataset(root/'data/A4Benchmark')
     assert [p.stem for p in files]==[f'A4Benchmark-TS{i}' for i in range(1,101)]
-    for phase,expected in [('train',range(40)),('validation',range(40,60)),('test',range(60,100))]:
-        indices,truths,bounds=phase_inputs(series,splits,phase)
-        assert indices==list(expected) and bounds==[(0,1680)]*len(expected)
-        for index,truth in zip(indices,truths):
-            np.testing.assert_array_equal(truth,np.flatnonzero(series[index].labels))
+    for region, expected_truths in [(slice(0,40),86),(slice(40,60),43),(slice(60,100),79)]:
+        assert all(len(s.values)==1680 for s in series[region])
+        assert sum(np.count_nonzero(s.labels) for s in series[region])==expected_truths
     assert sum(np.count_nonzero(s.labels) for s in series)==208
 
 

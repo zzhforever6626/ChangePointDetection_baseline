@@ -1,8 +1,8 @@
 {
-  "started_at": "2026-10-17T11:38:39.741856+00:00",
+  "started_at": "2026-10-17T19:51:35.769148+00:00",
   "environment": {
     "python": "3.10.21 | packaged by Anaconda, Inc. | (main, Aug 27 2026, 14:35:39) [MSC v.1942 64 bit (AMD64)]",
-    "executable": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\experiments\\environments\\unified-py310\\Scripts\\python.exe",
+    "executable": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\verification\\standalone-2026-10-17\\.venv\\Scripts\\python.exe",
     "platform": "Windows-10-10.0.26200-SP0",
     "numpy": "2.2.6",
     "pandas": "2.3.3",
@@ -13,9 +13,9 @@
   "scope": "fixed baseline evaluation",
   "modes": {
     "floss": "fresh full validation/test scoring",
-    "rulsif": "hash-verified score replay; alarms and metrics recomputed",
+    "rulsif": "fresh full scoring",
     "tscp2": "fixed checkpoint reload and inference; no training"
   },
-  "finished_at": "2026-10-17T11:39:39.325438+00:00",
+  "finished_at": "2026-10-17T19:54:20.622121+00:00",
   "status": "complete"
 }

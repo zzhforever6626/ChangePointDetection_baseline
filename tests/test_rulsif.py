@@ -2,8 +2,7 @@
 import numpy as np
 import pytest
 
-from breakpoint_detection.models.author_rulsif import fit_direction
-from breakpoint_detection.models.rulsif import RuLSIFDetector, alarm_predictions, chronological_alarm_scores
+from breakpoint_detection.models.author_rulsif import fit_direction, score_series, paired_samples
 
 
 def scalar_reference(numerator, denominator):
@@ -51,31 +50,21 @@ def test_direction_matches_independent_five_fold_relative_risk(seed):
 
 def test_full_reverse_scan_and_literal_plot_geometry():
     values = np.random.default_rng(41).normal(size=54)
-    detector = RuLSIFDetector(alpha=.1).fit(values)
-    assert np.flatnonzero(np.isfinite(detector.scores_)).tolist() == list(range(20,26))
+    boundary, _, _, available, plot = score_series(values, 10, n=20, alpha=.1)
+    assert np.flatnonzero(np.isfinite(boundary)).tolist() == list(range(20,26))
     for start in (0,2,5):
         scores = []
         for observation,offset in ((values,start),(values[::-1],5-start)):
             vectors = np.lib.stride_tricks.sliding_window_view(observation,10)[offset:offset+40].copy()
             vectors /= np.std(vectors,axis=0,ddof=1)
             scores.append(scalar_reference(vectors[20:],vectors[:20])[0])
-        np.testing.assert_allclose(detector.scores_[20+start],sum(scores),rtol=1e-9,atol=1e-11)
-        assert detector.boundary_positions_[20+start] == 20+start
-        assert detector.source_plot_positions_[20+start] == 48+start
-        assert detector.score_available_stop_[20+start] == 49+start
-
-
-def test_original_peak_predecessor_and_strict_threshold_are_not_score_nms():
-    peaks = np.full(80,np.nan)
-    peaks[[5,10,19,35]] = [1,10,20,2]
-    alarms = chronological_alarm_scores(peaks,10)
-    assert np.flatnonzero(np.isfinite(alarms)).tolist() == [5,35]
-    assert alarm_predictions(alarms,1,(0,80)).tolist() == [35]
-    assert alarm_predictions(alarms,2,(0,80)).tolist() == []
+        np.testing.assert_allclose(boundary[20+start],sum(scores),rtol=1e-9,atol=1e-11)
+        assert plot[start] == 48+start
+        assert available[20+start] == 49+start
 
 
 def test_source_invalid_constant_buffer_is_not_silently_regularized():
     with pytest.raises(ValueError,match="zero coordinate std"):
-        RuLSIFDetector().fit(np.ones(60))
-    with pytest.raises(ValueError,match=">=49 finite"):
-        RuLSIFDetector().fit(np.arange(48.))
+        score_series(np.ones(60), 10, n=20, alpha=.01)
+    with pytest.raises(ValueError,match="Incomplete author buffer"):
+        paired_samples(np.arange(48.), 0, 10, n=20)

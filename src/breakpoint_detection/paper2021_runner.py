@@ -222,7 +222,7 @@ def run(args):
     if output == official or official in output.parents:
         raise ValueError('output cannot overwrite official results')
     models = ['floss', 'rulsif', 'tscp2'] if args.model == 'all' else [args.model]
-    files, series, _ = load_dataset(args.input, 'source-pooled')
+    files, series = load_dataset(args.input)
     input_hashes = {str(p.resolve()): sha256(p) for p in files}
     source = source_hashes()
     if args.resume:

@@ -68,9 +68,3 @@ def phase_peak_scores(scores, window, phase_stop, step=1):
         if np.isfinite([left, value, right]).all() and value > left and value >= right:
             peaks[center] = value
     return peaks
-
-
-def alarm_predictions(peaks, threshold, bounds):
-    start, stop = bounds
-    region = np.asarray(peaks)[start:stop]
-    return np.flatnonzero(np.isfinite(region) & (region > threshold)) + start

@@ -114,7 +114,7 @@ python scripts/train_tscp2.py --output reproductions/tscp2-training
 
 输出保留全部预测、报警、指标和原始stdout／stderr。使用 `--keep-scores` 可同时保留评分与输入中间数组。
 
-底层 `run-baseline` 支持 `--model floss`、`rulsif`、`tscp2` 单独评价。`--workers` 控制传统模型评分进程数；TSCP2使用2个CPU线程。
+底层 `run-baseline --model floss`、`--model rulsif`、`--model tscp2` 可单独评价。`--workers` 控制传统模型评分进程数；TSCP2使用2个CPU线程。
 
 每次运行使用新的输出目录。回归测试：
 
@@ -122,10 +122,4 @@ python scripts/train_tscp2.py --output reproductions/tscp2-training
 python -m pytest -q
 ```
 
-## 实验输出
-
-每个模型的 `stdout.log`、`stderr.log` 保存原始输出，`process.json` 记录命令、运行时间和退出码。`test-output.jsonl` 包含40条测试序列×3个容差，共120行完整测试输出。
-
-`run/<model>/metrics.csv`、`events.csv` 和 `summary.csv` 分别保存验证／测试逐文件指标、全部报警和汇总；`run/run.json` 保存实际配置与保留文件的校验信息。核验脚本检查540行逐文件指标和18行汇总，并生成9组实验F1与论文参考F1的对照表。
-
-数据和参考代码链接见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+输出文件说明见 [实验日志](logs/README.md)，数据和参考代码链接见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

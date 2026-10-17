@@ -35,7 +35,7 @@ def prepare(output):
     config.update(parameters)
     for key in ('checkpoint', 'checkpoint_sha256'):
         config.pop(key)
-    files, series, _ = load_dataset(ROOT / 'data/A4Benchmark', preprocessing=config['preprocessing'])
+    _, series = load_dataset(ROOT / 'data/A4Benchmark', preprocessing=config['preprocessing'])
     # Only TS1-40 contribute training pairs. TS41-60 are scored after training.
     np.savez_compressed(output / 'development-input.npz',
         values=np.stack([s.values for s in series[:60]]),
@@ -59,7 +59,7 @@ def verify(output):
         assert row.stalled == stalled
         assert stalled < 4 or i == len(history) - 1
     assert stalled == 4 or len(history) == config['max_epochs']
-    _, series, _ = load_dataset(ROOT / 'data/A4Benchmark', preprocessing=config['preprocessing'])
+    _, series = load_dataset(ROOT / 'data/A4Benchmark', preprocessing=config['preprocessing'])
     values = np.stack([s.values for s in series[:60]])
     stops = np.array([1680] * 40 + [0] * 20)
     with np.load(output / 'development-input.npz', allow_pickle=False) as data:
@@ -80,7 +80,7 @@ def verify(output):
     destination = output / 'evaluation/tscp2'
     empty_output(destination)
     destination.mkdir(parents=True, exist_ok=True)
-    files, series, _ = load_dataset(ROOT / 'data/A4Benchmark', preprocessing=config['preprocessing'])
+    files, series = load_dataset(ROOT / 'data/A4Benchmark', preprocessing=config['preprocessing'])
     metrics, events, summaries = [], [], []
     args = SimpleNamespace(tscp2_python=Path(sys.executable), tscp2_device='cpu')
     for phase, region in [('validation', slice(40, 60)), ('test', slice(60, 100))]:

@@ -4,10 +4,10 @@
     "-m",
     "pytest",
     "-q",
-    "--junitxml=D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\verification\\complete-training-entry-2026-10-18\\pytest.xml"
+    "--junitxml=D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\experiments\\refactor\\clone-code-slimming-2026-10-18\\pytest.xml"
   ],
   "cwd": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction",
   "exit_code": 0,
-  "finished_at": "2026-10-17T19:33:51.458996+00:00",
-  "tests": 31
+  "finished_at": "2026-10-17T19:52:47.882007+00:00",
+  "tests": 20
 }

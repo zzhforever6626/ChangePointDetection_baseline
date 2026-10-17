@@ -1,6 +1,6 @@
 {
   "command": [
-    "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\experiments\\environments\\unified-py310\\Scripts\\python.exe",
+    "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\verification\\standalone-2026-10-17\\.venv\\Scripts\\python.exe",
     "-m",
     "breakpoint_detection.cli",
     "data/A4Benchmark",
@@ -14,8 +14,8 @@
     "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\logs\\baseline-verification\\floss\\run"
   ],
   "cwd": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction",
-  "started_at": "2026-10-17T11:38:47.268614+00:00",
+  "started_at": "2026-10-17T19:51:38.061285+00:00",
   "mode": "fresh full validation/test scoring",
   "exit_code": 0,
-  "finished_at": "2026-10-17T11:39:04.697563+00:00"
+  "finished_at": "2026-10-17T19:51:50.743388+00:00"
 }
