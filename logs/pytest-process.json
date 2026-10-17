@@ -1,12 +1,12 @@
 {
   "command": [
-    "D:\\miniconda\\envs\\hkbu-breakpoint-detection\\python.exe",
+    "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\experiments\\environments\\unified-py310\\Scripts\\python.exe",
     "-m",
     "pytest",
     "-q",
     "--junitxml=logs/pytest.xml"
   ],
-  "started_at": "2026-10-17T10:36:11.777644+00:00",
-  "finished_at": "2026-10-17T10:36:14.537815+00:00",
+  "started_at": "2026-10-17T11:20:03.463592+00:00",
+  "finished_at": "2026-10-17T11:20:07.157867+00:00",
   "exit_code": 0
 }

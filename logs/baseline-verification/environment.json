@@ -1,28 +1,21 @@
 {
-  "started_at": "2026-10-17T10:34:50.640726+00:00",
-  "baseline_environment": {
+  "started_at": "2026-10-17T11:19:24.534838+00:00",
+  "environment": {
     "python": "3.10.21 | packaged by Anaconda, Inc. | (main, Aug 27 2026, 14:35:39) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\experiments\\environments\\unified-py310\\Scripts\\python.exe",
     "platform": "Windows-10-10.0.26200-SP0",
-    "numpy_runtime": "2.2.6",
-    "numpy_distribution_metadata": "2.2.6",
-    "pandas": "2.3.3"
-  },
-  "neural_environment": {
-    "python": "3.9.25 (main, Nov  3 2025, 22:44:01) [MSC v.1929 64 bit (AMD64)]",
-    "platform": "Windows-10-10.0.26200-SP0",
-    "numpy_runtime": "1.26.4",
-    "numpy_distribution_metadata": "1.21.6",
-    "torch": "2.7.1+cu128",
-    "cuda": "12.8",
-    "cudnn": 90701
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.7.1+cpu",
+    "device": "cpu"
   },
   "fixed_settings_sha256": "cd4934bb2d5e75e1e22fc693d008594849408256aaf75b06418d35292da7732b",
-  "scope": "new actual execution in exported repository; no historical console output reconstructed",
+  "scope": "fixed baseline evaluation",
   "modes": {
     "floss": "fresh full validation/test scoring",
     "rulsif": "hash-verified score replay; alarms and metrics recomputed",
     "tscp2": "fixed checkpoint reload and inference; no training"
   },
-  "finished_at": "2026-10-17T10:35:46.300236+00:00",
+  "finished_at": "2026-10-17T11:20:30.771758+00:00",
   "status": "complete"
 }

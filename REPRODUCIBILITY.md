@@ -2,37 +2,30 @@
 
 ## 环境安装
 
-运行使用两个Python环境：
+三模型共用一个Python 3.10环境：
 
-| 环境 | Python | 核心依赖 | 用途 |
-|---|---|---|---|
-| baseline | 3.10.21 | NumPy 2.2.6、pandas 2.3.3 | 数据处理、传统模型与评价 |
-| tscp2 | 3.9.25 | NumPy 1.26.4、Torch 2.7.1+cu128 | TSCP2 checkpoint推理 |
+| Python | NumPy | pandas | PyTorch | 运行设备 |
+|---|---|---|---|---|
+| 3.10.21 | 2.2.6 | 2.3.3 | 2.7.1+cpu | CPU |
 
 在仓库根目录安装：
 
 ```powershell
-conda create -n hkbu-baseline-repro python=3.10.21 pip
-conda run -n hkbu-baseline-repro python -m pip install -r environments/requirements-test.txt
-conda run -n hkbu-baseline-repro python -m pip install -r environments/requirements-build.txt
-conda run -n hkbu-baseline-repro python -m pip install --no-deps --no-build-isolation -e .
-
-conda create -n hkbu-tscp2-repro python=3.9.25 pip
-conda run -n hkbu-tscp2-repro python -m pip install -r environments/requirements-tscp2.txt
-conda run -n hkbu-tscp2-repro python -m pip install -r environments/requirements-torch-cu128.txt
-conda run -n hkbu-tscp2-repro python -c "import sys; print(sys.executable)"
+py -3.10 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m pip install --no-deps --no-build-isolation -e .
 ```
 
-将最后输出的解释器路径填入 `--tscp2-python`。环境文件也提供 [baseline.yml](environments/baseline.yml) 和 [tscp2.yml](environments/tscp2.yml)。
+`requirements.txt` 包含运行、测试和打包依赖，PyTorch使用CPU构建。
 
-记录中的执行平台为Windows x86_64，三个模型均使用CPU。NumPy依赖按运行时版本固定；具体版本及数值库构建信息见 `logs/baseline-verification/environment.json` 和 `provenance/environments`。
+执行平台为Windows x86_64。具体版本及数值库构建信息见 `logs/baseline-verification/environment.json` 和 `provenance/environments/native-runtime.txt`。
 
 ## 运行
 
 ```powershell
-conda activate hkbu-baseline-repro
 python -m pytest -q
-python scripts/reproduce.py --output reproductions/my-run --tscp2-python PATH_TO_TORCH_PYTHON --workers 4
+python scripts/reproduce.py --output reproductions/my-run --workers 4
 python scripts/verify.py reproductions/my-run
 ```
 

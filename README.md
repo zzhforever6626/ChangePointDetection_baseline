@@ -4,7 +4,7 @@
 
 统一配置为 [baseline_settings.json](src/breakpoint_detection/baseline_settings.json)。仓库包含数据、源码、环境依赖、checkpoint、评分轨迹和实验日志。
 
-安装与运行见 [复现说明](REPRODUCIBILITY.md)，完整测试输出和指标对照见 [实验日志](logs/README.md)。
+三模型共用Python 3.10环境，全部依赖固定在 [requirements.txt](requirements.txt)。安装与运行见 [复现说明](REPRODUCIBILITY.md)，完整测试输出和指标对照见 [实验日志](logs/README.md)。
 
 ## 当前结果
 
@@ -60,7 +60,7 @@ FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮
 按[复现说明](REPRODUCIBILITY.md)安装环境后，在仓库根目录执行：
 
 ```powershell
-python scripts/reproduce.py --output reproductions/my-run --tscp2-python PATH_TO_TORCH_PYTHON --workers 4
+python scripts/reproduce.py --output reproductions/my-run --workers 4
 python scripts/verify.py reproductions/my-run
 ```
 

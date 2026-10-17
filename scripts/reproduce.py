@@ -14,22 +14,17 @@ from breakpoint_detection.protocol import sha256
 def write(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False)+'\n', encoding='utf-8')
 
-def runtime(interpreter, neural=False):
-    code = '''import sys,platform,json,importlib.metadata as m
-import numpy
-v=dict(python=sys.version,platform=platform.platform(),numpy_runtime=numpy.__version__,numpy_distribution_metadata=m.version('numpy'))
+def runtime():
+    code = '''import torch
+import sys,platform,json,numpy,pandas
+print(json.dumps(dict(python=sys.version,executable=sys.executable,platform=platform.platform(),
+    numpy=numpy.__version__,pandas=pandas.__version__,torch=torch.__version__,device='cpu')))
 '''
-    if neural:
-        code = 'import torch\n'+code+"v.update(torch=torch.__version__,cuda=torch.version.cuda,cudnn=torch.backends.cudnn.version())\n"
-    else:
-        code += "import pandas\nv.update(pandas=pandas.__version__)\n"
-    code += 'print(json.dumps(v))'
-    return json.loads(subprocess.check_output([str(interpreter),'-c',code], text=True, encoding='utf-8'))
+    return json.loads(subprocess.check_output([sys.executable,'-c',code], text=True, encoding='utf-8'))
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--tscp2-python',type=Path,default=Path(sys.executable))
     parser.add_argument('--workers',type=int,default=4)
     parser.add_argument('--fresh-rulsif',action='store_true',help='recompute all density scores instead of verified cached scores')
     args = parser.parse_args()
@@ -40,7 +35,7 @@ def main():
     env = dict(os.environ,PYTHONPATH=str(ROOT/'src'),PYTHONUNBUFFERED='1',
         OMP_NUM_THREADS='2',MKL_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_THREADING_LAYER='SEQUENTIAL')
     metadata = dict(started_at=datetime.now(timezone.utc).isoformat(),
-        baseline_environment=runtime(sys.executable),neural_environment=runtime(args.tscp2_python,True),
+        environment=runtime(),
         fixed_settings_sha256=sha256(ROOT/'src/breakpoint_detection/baseline_settings.json'),
         scope='fixed baseline evaluation',
         modes=dict(floss='fresh full validation/test scoring',rulsif='fresh full scoring' if args.fresh_rulsif else 'hash-verified score replay; alarms and metrics recomputed',
@@ -50,8 +45,7 @@ def main():
         destination = output/model
         destination.mkdir()
         command = [sys.executable,'-m','breakpoint_detection.cli','data/A4Benchmark','--model',model,
-            '--workers',str(args.workers),'--tscp2-python',str(args.tscp2_python.resolve()),
-            '--tscp2-device','cpu','--output',str(destination/'run')]
+            '--workers',str(args.workers),'--tscp2-device','cpu','--output',str(destination/'run')]
         if model=='rulsif' and not args.fresh_rulsif:
             command += ['--reuse-scores','results/yahoo-a4']
         process_meta = dict(command=command,cwd=str(ROOT),started_at=datetime.now(timezone.utc).isoformat(),

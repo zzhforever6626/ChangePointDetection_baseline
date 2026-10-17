@@ -178,7 +178,7 @@
     "reference_sources/floss/pick_k_minimum.m": "608561c9c97b672c79574ca22c4a27ff1c3d172126da1c7443eb727765fc2093",
     "reference_sources/floss/stamp1DirSelf.m": "f588edd3238a80ef77247be77c8fb4c4876e7ca27139e0ce23f1a0f0452a99c1",
     "reference_sources/floss/stamp1DirSelfSlide.m": "98f6dce4dd1f24fceda40a967dbeb9098d9ef3958efe6029b5b84b0cb2ad278b",
-    "reference_sources/README.md": "c4e02fc416c6dcc23ae5cf27fe179243d5c1ac3740190308d81536db91751e85",
+    "reference_sources/README.md": "5be07ea7d5d99cc63db99f34243d48e3d6389e796ab49ede4ec6f5bc7aeff29c",
     "reference_sources/rulsif/change_detection.m": "da251fc4dc6d5ad182d914e29942b16c6e0347f9d44bfb2cbf1743d93107f449",
     "reference_sources/rulsif/demo.m": "edb37cc0c26775fa50b1509eb58b2825a65d7143e17437651f31b577015a0138",
     "reference_sources/rulsif/lib/comp_dist.m": "6f6ebe0371f21759b191ed682ea6de11fa78d94e641f01bf60cbae032076eea6",
@@ -194,7 +194,7 @@
     "reference_sources/tscp2/losses.py": "5fadb46102949895458838ecc13834083d12112cb378590c131866b9a03c4d13",
     "reference_sources/tscp2/main.py": "2705ccd84f7b17c5eee3732781430afbade3c979a26d11a602b80dd9f2ddcba9",
     "reference_sources/tscp2/manifest.json": "896585f965274560bd6ca29cfaa94eacbd779da3aa08648acb8492c9d7714e0c",
-    "reference_sources/tscp2/README.md": "ca4e1edc39c0e24f96a6368336cc4ee67f86df6b5e527d015996bdb2ed8b6055",
+    "reference_sources/tscp2/README.md": "1050d89d798f0cb905905681bf02b78b5875564b289f5bccd9b740f282c50b61",
     "reference_sources/tscp2/TSCP2.py": "8efb21974a21a11dbf8dd0c3119a1a90fee94cead4ae9876ec57a57876da8d8d",
     "reference_sources/tscp2/utils/analysis_helper.py": "26909a38516f0d142659065cc579e2e474652e37d6907aa9454f384fd357288c",
     "reference_sources/tscp2/utils/DataHelper.py": "02c7a41dae93f880ef3a8c654bdd88c15a202dba493bbcf2518ce018f3de4b2b",
@@ -309,19 +309,19 @@
     "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\data\\A4Benchmark\\A4Benchmark-TS100.csv": "f211cc622cc530180462621d35aea30f216d093bf3dc18b6588023d0ff15b66d"
   },
   "checkpoint_sha256": "f8fac6abac763be6080df328c8e6f3fbadb8414285fcc2fd93c04c8cb9193992",
-  "started_at": "2026-10-17T10:35:09.898368+00:00",
+  "started_at": "2026-10-17T11:19:54.893834+00:00",
   "training_performed": false,
   "parameter_selection_performed": false,
   "new_blind_test": false,
-  "completed_at": "2026-10-17T10:35:46.162635+00:00",
+  "completed_at": "2026-10-17T11:20:30.657586+00:00",
   "output_sha256": {
     "tscp2/events.csv": "01113d558de17c838a497b7f35999a7141ae9ea1be1755033e8ea49670d16db7",
     "tscp2/fixed-settings.json": "89086779facad02ee678a0cfa76efb9d67c5913d4e9f2b03af5d0ac2c125b3bb",
     "tscp2/metrics.csv": "53ff0b73a83fc2d8401d50c2d8ce797b7f9caef705913db527dccd9ebab812a5",
     "tscp2/summary.csv": "a628712bf753a63d3fb3e78c45fafd0052946bf7eeda5dc27135f4ced8ba6769",
     "tscp2/test/w032-b032-c16-lr3e-04/input.npz": "a810b35781c2ce3c9414ad3575ec896d6217f68816317798cfd1aa3f8262e838",
-    "tscp2/test/w032-b032-c16-lr3e-04/scores.npz": "7dbeb6ea6655e47ccdf0531fca6328b24fafe5f53bed4ce6643693314e0913be",
+    "tscp2/test/w032-b032-c16-lr3e-04/scores.npz": "c960798cade7358f355e9b54e25fc081749a176087f5846a9bd56e1254e4c022",
     "tscp2/validation/w032-b032-c16-lr3e-04/input.npz": "a62d22c862bb02ff676d9c23ffcc2f970d9ca826329d444f89b90177f46d33a8",
-    "tscp2/validation/w032-b032-c16-lr3e-04/scores.npz": "53b54438479212d47ebb048a1c07d20c48f313797b5117c77b22bc64c828ccfd"
+    "tscp2/validation/w032-b032-c16-lr3e-04/scores.npz": "724bf77a700e0af8db01dba094cd467757a17d1f3be14e12f115acae79a60f02"
   }
 }
