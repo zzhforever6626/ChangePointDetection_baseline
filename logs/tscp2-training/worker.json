@@ -1,0 +1,16 @@
+{
+  "epochs": 385,
+  "training_pairs": 12960,
+  "retained_pairs": 12928,
+  "batch_count": 404,
+  "stopping_reason": "source_patience_four",
+  "final_loss": 1.9103591442108154,
+  "device": "cpu",
+  "gpu": null,
+  "torch": "2.7.1+cpu",
+  "cuda": null,
+  "numpy": "2.2.6",
+  "seed": 0,
+  "parameter_count": 249312,
+  "framework": "PyTorch paper-first source port"
+}

@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "finished_at": "2026-10-17T17:37:41.067829+00:00",
+  "training_performed": true,
+  "initialized_from_checkpoint": false,
+  "seed": 0,
+  "device": "cpu",
+  "torch": "2.7.1+cpu",
+  "numpy": "2.2.6",
+  "epochs": 385,
+  "original_epochs": 385,
+  "training_history_equal": true,
+  "weight_tensors": 84,
+  "all_weight_tensors_equal": true,
+  "max_absolute_weight_difference": 0.0,
+  "training_samples_and_batches_equal": true,
+  "independent_metric_rows": 180,
+  "summary_rows": 6,
+  "comparison": {
+    "truth": true,
+    "prediction": true,
+    "tp": true,
+    "fp": true,
+    "fn": true,
+    "f1": true
+  },
+  "test_f1": [
+    0.464,
+    0.464,
+    0.5290322580645161
+  ],
+  "test_counts": [
+    [
+      29,
+      17,
+      50
+    ],
+    [
+      29,
+      17,
+      50
+    ],
+    [
+      41,
+      35,
+      38
+    ]
+  ],
+  "baseline_test_f1": [
+    0.464,
+    0.464,
+    0.5290322580645161
+  ],
+  "fixed_thresholds_used": {
+    "24": 0.5519941318780184,
+    "50": 0.5519941318780184,
+    "75": 0.45870756125077605
+  },
+  "parameter_selection_performed": false,
+  "protected_clone_files_unchanged": 426,
+  "original_checkpoint_unchanged": true,
+  "newly_trained_checkpoint": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\verification\\retrain-tscp2-2026-10-17\\trained\\encoder.pt"
+}

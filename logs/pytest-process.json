@@ -1,12 +1,13 @@
 {
   "command": [
-    "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\experiments\\environments\\unified-py310\\Scripts\\python.exe",
+    "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\verification\\standalone-2026-10-17\\.venv\\Scripts\\python.exe",
     "-m",
     "pytest",
     "-q",
-    "--junitxml=logs/pytest.xml"
+    "--junitxml=D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\verification\\complete-training-entry-2026-10-18\\pytest.xml"
   ],
-  "started_at": "2026-10-17T11:39:43.485812+00:00",
-  "finished_at": "2026-10-17T11:39:46.404052+00:00",
-  "exit_code": 0
+  "cwd": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction",
+  "exit_code": 0,
+  "finished_at": "2026-10-17T19:33:51.458996+00:00",
+  "tests": 31
 }

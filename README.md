@@ -44,7 +44,7 @@
 
 FLOSS固定每文件top-k=3，无分数阈值。TSCP2固定使用已训练385轮的checkpoint；三个容差共享该模型，各自应用固定阈值。
 
-30项回归测试通过；540行逐文件指标和18行汇总复算一致。
+540行逐文件指标和18行汇总复算一致。TSCP2已按种子0从头训练385轮，84个权重张量、训练损失记录与正式checkpoint一致；完整训练日志见 [logs/tscp2-training](logs/tscp2-training)。
 
 报警、逐文件计数和验证／测试汇总见 [FLOSS](results/yahoo-a4/floss/summary.csv)、[RuLSIF](results/yahoo-a4/rulsif/summary.csv)、[TSCP2](results/yahoo-a4/tscp2/summary.csv)。各模型的 `fixed-settings.json` 记录运行设置；[baseline-assets.json](results/yahoo-a4/baseline-assets.json)记录评分缓存的生成参数、输入和文件哈希。
 
@@ -95,6 +95,22 @@ python scripts/verify.py reproductions/my-run
 ```
 
 默认重算FLOSS评分、读取RuLSIF评分轨迹并生成报警、复载TSCP2 checkpoint推理。使用 `--fresh-rulsif` 重算RuLSIF全部密度评分。
+
+从头执行三个模型的完整实验，包括TSCP2随机初始化训练、RuLSIF全部密度估计重新拟合和FLOSS评分重算：
+
+```powershell
+python scripts/reproduce.py --output reproductions/full-run --workers 4 --fresh-rulsif --retrain-tscp2
+```
+
+TSCP2使用种子0、CPU两线程和配置中的原早停规则，不加载已有权重开始训练。训练后先使用新checkpoint对验证／测试集评分并核对权重、训练记录、预测和指标，通过后再执行三模型固定baseline核验。全部输入、配置和输出都在本仓库内生成，无需主项目或外部实验目录。
+
+也可单独训练和核验TSCP2：
+
+```powershell
+python scripts/train_tscp2.py --output reproductions/tscp2-training
+```
+
+输出包含 `trained/encoder.pt`、逐轮训练记录、原始日志、验证／测试指标及 `verification.json`。本机完整训练约5小时，实际轮数由早停决定。`--verify-only` 可核验已有训练输出，评价子目录需为空。
 
 输出保留全部预测、报警、指标和原始stdout／stderr。使用 `--keep-scores` 可同时保留评分与输入中间数组。
 

@@ -45,6 +45,7 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--workers',type=int,default=4)
     parser.add_argument('--fresh-rulsif',action='store_true',help='recompute all density scores instead of verified cached scores')
+    parser.add_argument('--retrain-tscp2',action='store_true',help='train TSCP2 from scratch and verify its new checkpoint before evaluating all models')
     parser.add_argument('--keep-scores',action='store_true',help='keep intermediate score arrays in the run output')
     args = parser.parse_args()
     output = args.output.resolve()
@@ -60,6 +61,14 @@ def main():
         modes=dict(floss='fresh full validation/test scoring',rulsif='fresh full scoring' if args.fresh_rulsif else 'hash-verified score replay; alarms and metrics recomputed',
             tscp2='fixed checkpoint reload and inference; no training'))
     write(output/'environment.json',metadata)
+    if args.retrain_tscp2:
+        command = [sys.executable, str(ROOT/'scripts/train_tscp2.py'), '--output', str(output/'tscp2-training')]
+        with (output/'tscp2-training.stdout.log').open('w',encoding='utf-8') as stdout, \
+             (output/'tscp2-training.stderr.log').open('w',encoding='utf-8') as stderr:
+            subprocess.run(command,cwd=ROOT,env=env,stdout=stdout,stderr=stderr,check=True)
+        metadata['training_verification'] = json.loads((output/'tscp2-training/verification.json').read_text(encoding='utf-8'))
+        write(output/'environment.json',metadata)
+        print('tscp2: from-scratch training and new-checkpoint verification passed',flush=True)
     for model in ('floss','rulsif','tscp2'):
         destination = output/model
         destination.mkdir()
