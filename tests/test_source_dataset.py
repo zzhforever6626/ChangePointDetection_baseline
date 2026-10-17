@@ -6,7 +6,7 @@ from breakpoint_detection.tscp2_adapter import similarity_drop,phase_peak_scores
 
 
 def test_pooled_split_preserves_entire_files_and_every_raw_truth():
-    root=Path(__file__).resolve().parents[3]
+    root=Path(__file__).resolve().parents[1]
     files,series,splits=load_dataset(root/'data/A4Benchmark')
     assert [p.stem for p in files]==[f'A4Benchmark-TS{i}' for i in range(1,101)]
     for phase,expected in [('train',range(40)),('validation',range(40,60)),('test',range(60,100))]:
