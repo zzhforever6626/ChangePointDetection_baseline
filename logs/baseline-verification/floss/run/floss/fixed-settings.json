@@ -1,0 +1,22 @@
+{
+  "distance": "z-normalized Euclidean",
+  "buffer": 800,
+  "source_k": 3,
+  "suppression_factor": 5,
+  "seed": 0,
+  "noise_std": 0.001,
+  "preprocessing": "yahoo-anomaly-cleaned",
+  "fixed_claim": "2021 section 4.2 z-normalized Euclidean; section 4.4 window searched",
+  "adapters": "buffer800 is short-file adaptation; k3 and inclusive +/-5m follow public example; original scale before noise; seed0",
+  "by_margin": {
+    "24": {
+      "window": 25
+    },
+    "50": {
+      "window": 25
+    },
+    "75": {
+      "window": 55
+    }
+  }
+}

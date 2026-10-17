@@ -1,0 +1,181 @@
+series,model,phase,detection_margin,window,truth,prediction,metric,tp,fp,fn,precision,recall,f1,mean_delay
+A4Benchmark-TS41,rulsif,validation,24,25,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS42,rulsif,validation,24,25,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS43,rulsif,validation,24,25,"[839, 1259]","[839, 1259]",event_f1,2,0,0,1.0,1.0,1.0,0.0
+A4Benchmark-TS44,rulsif,validation,24,25,"[372, 745, 1118]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS45,rulsif,validation,24,25,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS46,rulsif,validation,24,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS47,rulsif,validation,24,25,"[559, 1399]",[1398],event_f1,1,0,1,1.0,0.5,0.6666666666666666,1.0
+A4Benchmark-TS48,rulsif,validation,24,25,"[559, 932, 1118, 1304]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS49,rulsif,validation,24,25,[671],"[752, 921, 1088, 1257, 1424, 1592]",event_f1,0,6,1,0.0,0.0,0.0,
+A4Benchmark-TS50,rulsif,validation,24,25,"[503, 839, 1007, 1343]","[1002, 1342, 1406, 1419, 1422, 1424, 1428, 1444, 1448, 1562, 1567, 1572, 1592, 1595, 1611, 1615]",event_f1,2,14,2,0.125,0.5,0.2,3.0
+A4Benchmark-TS51,rulsif,validation,24,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS52,rulsif,validation,24,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS53,rulsif,validation,24,25,[1007],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS54,rulsif,validation,24,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS55,rulsif,validation,24,25,"[419, 839, 979, 1259]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS56,rulsif,validation,24,25,"[419, 839, 1119, 1259]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS57,rulsif,validation,24,25,"[335, 503, 671, 1175]","[335, 415, 497]",event_f1,2,1,2,0.6666666666666666,0.5,0.5714285714285714,3.0
+A4Benchmark-TS58,rulsif,validation,24,25,"[279, 839, 1119, 1399]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS59,rulsif,validation,24,25,[839],"[838, 1069, 1442]",event_f1,1,2,0,0.3333333333333333,1.0,0.5,1.0
+A4Benchmark-TS60,rulsif,validation,24,25,"[719, 1199]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS41,rulsif,validation,50,25,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS42,rulsif,validation,50,25,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS43,rulsif,validation,50,25,"[839, 1259]","[839, 1259]",event_f1,2,0,0,1.0,1.0,1.0,0.0
+A4Benchmark-TS44,rulsif,validation,50,25,"[372, 745, 1118]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS45,rulsif,validation,50,25,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS46,rulsif,validation,50,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS47,rulsif,validation,50,25,"[559, 1399]",[1398],event_f1,1,0,1,1.0,0.5,0.6666666666666666,1.0
+A4Benchmark-TS48,rulsif,validation,50,25,"[559, 932, 1118, 1304]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS49,rulsif,validation,50,25,[671],"[752, 921, 1088, 1257, 1424, 1592]",event_f1,0,6,1,0.0,0.0,0.0,
+A4Benchmark-TS50,rulsif,validation,50,25,"[503, 839, 1007, 1343]","[1002, 1342, 1406, 1419, 1422, 1424, 1428, 1444, 1448, 1562, 1567, 1572, 1592, 1595, 1611, 1615]",event_f1,2,14,2,0.125,0.5,0.2,3.0
+A4Benchmark-TS51,rulsif,validation,50,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS52,rulsif,validation,50,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS53,rulsif,validation,50,25,[1007],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS54,rulsif,validation,50,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS55,rulsif,validation,50,25,"[419, 839, 979, 1259]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS56,rulsif,validation,50,25,"[419, 839, 1119, 1259]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS57,rulsif,validation,50,25,"[335, 503, 671, 1175]","[335, 415, 497]",event_f1,2,1,2,0.6666666666666666,0.5,0.5714285714285714,3.0
+A4Benchmark-TS58,rulsif,validation,50,25,"[279, 839, 1119, 1399]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS59,rulsif,validation,50,25,[839],"[838, 1069, 1442]",event_f1,1,2,0,0.3333333333333333,1.0,0.5,1.0
+A4Benchmark-TS60,rulsif,validation,50,25,"[719, 1199]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS41,rulsif,validation,75,10,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS42,rulsif,validation,75,10,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS43,rulsif,validation,75,10,"[839, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS44,rulsif,validation,75,10,"[372, 745, 1118]","[56, 81, 103, 224, 247, 271, 418, 584, 752, 776, 920, 943, 945, 1040, 1065, 1088, 1257, 1399, 1592, 1615]",event_f1,3,17,0,0.15,1.0,0.2608695652173913,27.666666666666668
+A4Benchmark-TS45,rulsif,validation,75,10,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS46,rulsif,validation,75,10,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS47,rulsif,validation,75,10,"[559, 1399]",[1397],event_f1,1,0,1,1.0,0.5,0.6666666666666666,2.0
+A4Benchmark-TS48,rulsif,validation,75,10,"[559, 932, 1118, 1304]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS49,rulsif,validation,75,10,[671],"[1088, 1258, 1591]",event_f1,0,3,1,0.0,0.0,0.0,
+A4Benchmark-TS50,rulsif,validation,75,10,"[503, 839, 1007, 1343]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS51,rulsif,validation,75,10,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS52,rulsif,validation,75,10,[],"[78, 104, 247, 415, 441, 584, 727, 751, 775, 897, 921, 1088, 1111, 1255, 1279, 1401, 1449, 1568, 1591]",event_f1,0,19,0,0.0,0.0,0.0,
+A4Benchmark-TS53,rulsif,validation,75,10,[1007],"[1086, 1615]",event_f1,0,2,1,0.0,0.0,0.0,
+A4Benchmark-TS54,rulsif,validation,75,10,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS55,rulsif,validation,75,10,"[419, 839, 979, 1259]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS56,rulsif,validation,75,10,"[419, 839, 1119, 1259]","[81, 103, 105, 269, 271, 390, 392, 526, 610, 665, 755, 839, 1001, 1088, 1146, 1258, 1400]",event_f1,4,13,0,0.23529411764705882,1.0,0.38095238095238093,13.75
+A4Benchmark-TS57,rulsif,validation,75,10,"[335, 503, 671, 1175]","[334, 414]",event_f1,1,1,3,0.5,0.25,0.3333333333333333,1.0
+A4Benchmark-TS58,rulsif,validation,75,10,"[279, 839, 1119, 1399]","[838, 1115, 1401]",event_f1,3,0,1,1.0,0.75,0.8571428571428571,2.3333333333333335
+A4Benchmark-TS59,rulsif,validation,75,10,[839],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS60,rulsif,validation,75,10,"[719, 1199]","[79, 1255, 1425, 1594]",event_f1,1,3,1,0.25,0.5,0.3333333333333333,56.0
+A4Benchmark-TS61,rulsif,test,24,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS62,rulsif,test,24,25,"[479, 959]","[959, 976, 985, 991, 1004, 1016, 1027, 1051, 1124, 1149, 1159, 1173, 1194, 1315, 1319, 1329, 1339, 1351, 1364, 1459, 1461, 1483, 1487, 1492, 1497, 1500, 1508, 1520, 1530, 1533, 1627, 1630]",event_f1,1,31,1,0.03125,0.5,0.058823529411764705,0.0
+A4Benchmark-TS63,rulsif,test,24,25,[],"[164, 332, 500, 668, 836, 1004, 1172, 1340, 1509]",event_f1,0,9,0,0.0,0.0,0.0,
+A4Benchmark-TS64,rulsif,test,24,25,"[335, 1343]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS65,rulsif,test,24,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS66,rulsif,test,24,25,"[279, 1119]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS67,rulsif,test,24,25,"[167, 335, 839, 1343]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS68,rulsif,test,24,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS69,rulsif,test,24,25,"[167, 335, 671, 1175]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS70,rulsif,test,24,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS71,rulsif,test,24,25,"[629, 1259, 1469]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS72,rulsif,test,24,25,"[279, 1119]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS73,rulsif,test,24,25,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS74,rulsif,test,24,25,[671],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS75,rulsif,test,24,25,"[629, 839, 1469]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS76,rulsif,test,24,25,"[419, 1259]","[1253, 1316, 1336, 1341, 1500, 1504, 1509, 1533]",event_f1,1,7,1,0.125,0.5,0.2,6.0
+A4Benchmark-TS77,rulsif,test,24,25,"[304, 762, 914, 1372]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS78,rulsif,test,24,25,"[419, 1049, 1259]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS79,rulsif,test,24,25,"[419, 629, 839, 1049]","[413, 476, 501]",event_f1,1,2,3,0.3333333333333333,0.25,0.2857142857142857,6.0
+A4Benchmark-TS80,rulsif,test,24,25,"[335, 503, 839, 1343]",[1338],event_f1,1,0,3,1.0,0.25,0.4,5.0
+A4Benchmark-TS81,rulsif,test,24,25,"[457, 609, 914, 1219]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS82,rulsif,test,24,25,"[629, 1049]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS83,rulsif,test,24,25,[839],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS84,rulsif,test,24,25,"[185, 745, 1118, 1491]","[1140, 1160, 1184, 1208, 1212, 1232, 1236, 1252, 1256, 1280, 1304, 1328, 1352, 1376, 1400, 1424, 1448, 1469]",event_f1,2,16,2,0.1111111111111111,0.5,0.18181818181818182,22.0
+A4Benchmark-TS85,rulsif,test,24,25,[1119],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS86,rulsif,test,24,25,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS87,rulsif,test,24,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS88,rulsif,test,24,25,"[479, 959]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS89,rulsif,test,24,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS90,rulsif,test,24,25,[671],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS91,rulsif,test,24,25,[1119],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS92,rulsif,test,24,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS93,rulsif,test,24,25,"[279, 1119]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS94,rulsif,test,24,25,"[419, 699, 979, 1399]","[414, 1391]",event_f1,2,0,2,1.0,0.5,0.6666666666666666,6.5
+A4Benchmark-TS95,rulsif,test,24,25,"[559, 932, 1118]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS96,rulsif,test,24,25,"[335, 671, 1175]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS97,rulsif,test,24,25,[839],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS98,rulsif,test,24,25,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS99,rulsif,test,24,25,"[503, 1007, 1343]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS100,rulsif,test,24,25,[1007],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS61,rulsif,test,50,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS62,rulsif,test,50,25,"[479, 959]","[959, 976, 985, 991, 1004, 1016, 1027, 1051, 1124, 1149, 1159, 1173, 1194, 1315, 1319, 1329, 1339, 1351, 1364, 1459, 1461, 1483, 1487, 1492, 1497, 1500, 1508, 1520, 1530, 1533, 1627, 1630]",event_f1,1,31,1,0.03125,0.5,0.058823529411764705,0.0
+A4Benchmark-TS63,rulsif,test,50,25,[],"[164, 332, 500, 668, 836, 1004, 1172, 1340, 1509]",event_f1,0,9,0,0.0,0.0,0.0,
+A4Benchmark-TS64,rulsif,test,50,25,"[335, 1343]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS65,rulsif,test,50,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS66,rulsif,test,50,25,"[279, 1119]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS67,rulsif,test,50,25,"[167, 335, 839, 1343]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS68,rulsif,test,50,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS69,rulsif,test,50,25,"[167, 335, 671, 1175]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS70,rulsif,test,50,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS71,rulsif,test,50,25,"[629, 1259, 1469]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS72,rulsif,test,50,25,"[279, 1119]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS73,rulsif,test,50,25,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS74,rulsif,test,50,25,[671],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS75,rulsif,test,50,25,"[629, 839, 1469]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS76,rulsif,test,50,25,"[419, 1259]","[1253, 1316, 1336, 1341, 1500, 1504, 1509, 1533]",event_f1,1,7,1,0.125,0.5,0.2,6.0
+A4Benchmark-TS77,rulsif,test,50,25,"[304, 762, 914, 1372]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS78,rulsif,test,50,25,"[419, 1049, 1259]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS79,rulsif,test,50,25,"[419, 629, 839, 1049]","[413, 476, 501]",event_f1,1,2,3,0.3333333333333333,0.25,0.2857142857142857,6.0
+A4Benchmark-TS80,rulsif,test,50,25,"[335, 503, 839, 1343]",[1338],event_f1,1,0,3,1.0,0.25,0.4,5.0
+A4Benchmark-TS81,rulsif,test,50,25,"[457, 609, 914, 1219]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS82,rulsif,test,50,25,"[629, 1049]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS83,rulsif,test,50,25,[839],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS84,rulsif,test,50,25,"[185, 745, 1118, 1491]","[1140, 1160, 1184, 1208, 1212, 1232, 1236, 1252, 1256, 1280, 1304, 1328, 1352, 1376, 1400, 1424, 1448, 1469]",event_f1,2,16,2,0.1111111111111111,0.5,0.18181818181818182,22.0
+A4Benchmark-TS85,rulsif,test,50,25,[1119],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS86,rulsif,test,50,25,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS87,rulsif,test,50,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS88,rulsif,test,50,25,"[479, 959]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS89,rulsif,test,50,25,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS90,rulsif,test,50,25,[671],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS91,rulsif,test,50,25,[1119],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS92,rulsif,test,50,25,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS93,rulsif,test,50,25,"[279, 1119]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS94,rulsif,test,50,25,"[419, 699, 979, 1399]","[414, 1391]",event_f1,2,0,2,1.0,0.5,0.6666666666666666,6.5
+A4Benchmark-TS95,rulsif,test,50,25,"[559, 932, 1118]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS96,rulsif,test,50,25,"[335, 671, 1175]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS97,rulsif,test,50,25,[839],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS98,rulsif,test,50,25,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS99,rulsif,test,50,25,"[503, 1007, 1343]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS100,rulsif,test,50,25,[1007],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS61,rulsif,test,75,10,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS62,rulsif,test,75,10,"[479, 959]","[79, 102, 104, 248, 270, 415, 417, 497, 502, 607, 958, 978, 981, 1002, 1006, 1026, 1122, 1127, 1146, 1150, 1171, 1174, 1193, 1295, 1313, 1318, 1338, 1341, 1362, 1366, 1385, 1462, 1482, 1485, 1506, 1509, 1530, 1534, 1631, 1650, 1654]",event_f1,2,39,0,0.04878048780487805,1.0,0.09302325581395349,9.5
+A4Benchmark-TS63,rulsif,test,75,10,[],"[161, 164, 167, 416, 503, 584, 666, 668, 671, 839, 920, 1007, 1423, 1511]",event_f1,0,14,0,0.0,0.0,0.0,
+A4Benchmark-TS64,rulsif,test,75,10,"[335, 1343]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS65,rulsif,test,75,10,[419],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS66,rulsif,test,75,10,"[279, 1119]",[274],event_f1,1,0,1,1.0,0.5,0.6666666666666666,5.0
+A4Benchmark-TS67,rulsif,test,75,10,"[167, 335, 839, 1343]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS68,rulsif,test,75,10,[],"[585, 919, 921, 1423]",event_f1,0,4,0,0.0,0.0,0.0,
+A4Benchmark-TS69,rulsif,test,75,10,"[167, 335, 671, 1175]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS70,rulsif,test,75,10,[],"[247, 249]",event_f1,0,2,0,0.0,0.0,0.0,
+A4Benchmark-TS71,rulsif,test,75,10,"[629, 1259, 1469]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS72,rulsif,test,75,10,"[279, 1119]","[274, 417, 776, 921, 1064, 1088, 1113, 1231, 1233, 1256, 1424, 1569]",event_f1,2,10,0,0.16666666666666666,1.0,0.2857142857142857,5.5
+A4Benchmark-TS73,rulsif,test,75,10,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS74,rulsif,test,75,10,[671],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS75,rulsif,test,75,10,"[629, 839, 1469]",[],event_f1,0,0,3,0.0,0.0,0.0,
+A4Benchmark-TS76,rulsif,test,75,10,"[419, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS77,rulsif,test,75,10,"[304, 762, 914, 1372]",[1089],event_f1,0,1,4,0.0,0.0,0.0,
+A4Benchmark-TS78,rulsif,test,75,10,"[419, 1049, 1259]","[128, 225, 392, 394, 754, 895, 897, 1049, 1087, 1112, 1569]",event_f1,2,9,1,0.18181818181818182,0.6666666666666666,0.2857142857142857,12.5
+A4Benchmark-TS79,rulsif,test,75,10,"[419, 629, 839, 1049]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS80,rulsif,test,75,10,"[335, 503, 839, 1343]","[497, 584, 838, 1338]",event_f1,3,1,1,0.75,0.75,0.75,4.0
+A4Benchmark-TS81,rulsif,test,75,10,"[457, 609, 914, 1219]",[],event_f1,0,0,4,0.0,0.0,0.0,
+A4Benchmark-TS82,rulsif,test,75,10,"[629, 1049]","[57, 80, 104, 249, 272, 416, 440, 584, 752, 897, 920, 1064, 1088, 1112, 1232, 1255, 1257, 1401, 1424, 1448, 1591, 1616]",event_f1,2,20,0,0.09090909090909091,1.0,0.16666666666666666,30.0
+A4Benchmark-TS83,rulsif,test,75,10,[839],"[56, 80, 104, 224, 248, 272, 393, 415, 440, 585, 608, 728, 752, 777, 834, 896, 921, 944, 1064, 1088, 1112, 1232, 1256, 1280, 1400, 1424, 1592, 1616]",event_f1,1,27,0,0.03571428571428571,1.0,0.06896551724137931,5.0
+A4Benchmark-TS84,rulsif,test,75,10,"[185, 745, 1118, 1491]","[1233, 1255, 1257, 1279, 1400, 1402, 1425, 1447]",event_f1,1,7,3,0.125,0.25,0.16666666666666666,44.0
+A4Benchmark-TS85,rulsif,test,75,10,[1119],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS86,rulsif,test,75,10,[559],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS87,rulsif,test,75,10,[],"[584, 920, 1089, 1593]",event_f1,0,4,0,0.0,0.0,0.0,
+A4Benchmark-TS88,rulsif,test,75,10,"[479, 959]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS89,rulsif,test,75,10,[419],"[57, 77, 79, 103, 224, 247, 727, 752, 774, 920, 1065, 1088]",event_f1,0,12,1,0.0,0.0,0.0,
+A4Benchmark-TS90,rulsif,test,75,10,[671],"[79, 249, 417, 584, 665, 729, 752, 921, 1255, 1257, 1424, 1591]",event_f1,1,11,0,0.08333333333333333,1.0,0.15384615384615385,6.0
+A4Benchmark-TS91,rulsif,test,75,10,[1119],"[897, 1114, 1424]",event_f1,1,2,0,0.3333333333333333,1.0,0.5,5.0
+A4Benchmark-TS92,rulsif,test,75,10,[],[],event_f1,0,0,0,0.0,0.0,0.0,
+A4Benchmark-TS93,rulsif,test,75,10,"[279, 1119]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS94,rulsif,test,75,10,"[419, 699, 979, 1399]","[413, 560, 632, 982, 1025, 1175, 1427]",event_f1,4,3,0,0.5714285714285714,1.0,0.7272727272727273,26.0
+A4Benchmark-TS95,rulsif,test,75,10,"[559, 932, 1118]",[1115],event_f1,1,0,2,1.0,0.3333333333333333,0.5,3.0
+A4Benchmark-TS96,rulsif,test,75,10,"[335, 671, 1175]","[335, 665, 1175, 1255, 1423, 1446, 1591, 1593]",event_f1,3,5,0,0.375,1.0,0.5454545454545454,2.0
+A4Benchmark-TS97,rulsif,test,75,10,[839],[],event_f1,0,0,1,0.0,0.0,0.0,
+A4Benchmark-TS98,rulsif,test,75,10,"[629, 1259]",[],event_f1,0,0,2,0.0,0.0,0.0,
+A4Benchmark-TS99,rulsif,test,75,10,"[503, 1007, 1343]",[1002],event_f1,1,0,2,1.0,0.3333333333333333,0.5,5.0
+A4Benchmark-TS100,rulsif,test,75,10,[1007],"[56, 80, 103, 224, 248, 271, 393, 416, 440, 561, 584, 728, 751, 775, 897, 919, 943, 1001, 1065, 1088, 1112, 1233, 1257, 1279, 1400, 1424, 1447, 1569, 1591, 1615]",event_f1,1,29,0,0.03333333333333333,1.0,0.06451612903225806,6.0

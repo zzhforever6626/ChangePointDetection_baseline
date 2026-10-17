@@ -1,0 +1,94 @@
+....E..EE....E...EE...........                                           [100%]
+=================================== ERRORS ====================================
+__________ ERROR at setup of test_yahoo_loader_and_event_conversion ___________
+
+self = WindowsPath('D:/work/Python_work/HKBU_Breakpoint-Detection/github-clone/HKBU-Breakpoint-Detection-Reproduction/experiments/artifacts/pytest-tmp')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           self._accessor.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\experiments\\artifacts\\pytest-tmp'
+
+D:\miniconda\envs\hkbu-breakpoint-detection\lib\pathlib.py:1175: FileNotFoundError
+______ ERROR at setup of test_yahoo_a4_auto_uses_changepoint_not_anomaly ______
+
+self = WindowsPath('D:/work/Python_work/HKBU_Breakpoint-Detection/github-clone/HKBU-Breakpoint-Detection-Reproduction/experiments/artifacts/pytest-tmp')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           self._accessor.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\experiments\\artifacts\\pytest-tmp'
+
+D:\miniconda\envs\hkbu-breakpoint-detection\lib\pathlib.py:1175: FileNotFoundError
+___ ERROR at setup of test_tscp2_a4_preprocessing_replaces_spatial_anomaly ____
+
+self = WindowsPath('D:/work/Python_work/HKBU_Breakpoint-Detection/github-clone/HKBU-Breakpoint-Detection-Reproduction/experiments/artifacts/pytest-tmp')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           self._accessor.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\experiments\\artifacts\\pytest-tmp'
+
+D:\miniconda\envs\hkbu-breakpoint-detection\lib\pathlib.py:1175: FileNotFoundError
+_ ERROR at setup of test_native_scale_cleaning_keeps_author_noise_units_and_raw_truth _
+
+self = WindowsPath('D:/work/Python_work/HKBU_Breakpoint-Detection/github-clone/HKBU-Breakpoint-Detection-Reproduction/experiments/artifacts/pytest-tmp')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           self._accessor.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\experiments\\artifacts\\pytest-tmp'
+
+D:\miniconda\envs\hkbu-breakpoint-detection\lib\pathlib.py:1175: FileNotFoundError
+_ ERROR at setup of test_run_uses_fixed_thresholds_regardless_of_labels_and_guards_resume _
+
+self = WindowsPath('D:/work/Python_work/HKBU_Breakpoint-Detection/github-clone/HKBU-Breakpoint-Detection-Reproduction/experiments/artifacts/pytest-tmp')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           self._accessor.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\experiments\\artifacts\\pytest-tmp'
+
+D:\miniconda\envs\hkbu-breakpoint-detection\lib\pathlib.py:1175: FileNotFoundError
+_ ERROR at setup of test_cached_trajectory_rejects_input_and_payload_tampering _
+
+self = WindowsPath('D:/work/Python_work/HKBU_Breakpoint-Detection/github-clone/HKBU-Breakpoint-Detection-Reproduction/experiments/artifacts/pytest-tmp')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           self._accessor.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\experiments\\artifacts\\pytest-tmp'
+
+D:\miniconda\envs\hkbu-breakpoint-detection\lib\pathlib.py:1175: FileNotFoundError
+=========================== short test summary info ===========================
+ERROR experiments/tests/baseline/test_data_metrics.py::test_yahoo_loader_and_event_conversion
+ERROR experiments/tests/baseline/test_data_metrics.py::test_yahoo_a4_auto_uses_changepoint_not_anomaly
+ERROR experiments/tests/baseline/test_data_metrics.py::test_tscp2_a4_preprocessing_replaces_spatial_anomaly
+ERROR experiments/tests/baseline/test_native_input.py::test_native_scale_cleaning_keeps_author_noise_units_and_raw_truth
+ERROR experiments/tests/baseline/test_paper2021.py::test_run_uses_fixed_thresholds_regardless_of_labels_and_guards_resume
+ERROR experiments/tests/baseline/test_paper2021.py::test_cached_trajectory_rejects_input_and_payload_tampering
+24 passed, 6 errors in 2.40s

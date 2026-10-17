@@ -1,0 +1,7 @@
+ model      phase  detection_margin       f1  tp  fp  fn
+rulsif validation                24 0.216216   8  23  35
+rulsif validation                50 0.216216   8  23  35
+rulsif validation                75 0.228070  13  58  30
+rulsif       test                24 0.105263   8  65  71
+rulsif       test                50 0.105263   8  65  71
+rulsif       test                75 0.170492  26 200  53

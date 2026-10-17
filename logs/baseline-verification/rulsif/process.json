@@ -1,0 +1,25 @@
+{
+  "command": [
+    "D:\\miniconda\\envs\\hkbu-breakpoint-detection\\python.exe",
+    "-m",
+    "breakpoint_detection.cli",
+    "data/A4Benchmark",
+    "--model",
+    "rulsif",
+    "--workers",
+    "4",
+    "--tscp2-python",
+    "D:\\miniconda\\envs\\dlnp\\python.exe",
+    "--tscp2-device",
+    "cpu",
+    "--output",
+    "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\logs\\baseline-verification\\rulsif\\run",
+    "--reuse-scores",
+    "results/yahoo-a4"
+  ],
+  "cwd": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction",
+  "started_at": "2026-10-17T10:35:06.593348+00:00",
+  "mode": "hash-verified score replay; alarms and metrics recomputed",
+  "exit_code": 0,
+  "finished_at": "2026-10-17T10:35:08.909661+00:00"
+}

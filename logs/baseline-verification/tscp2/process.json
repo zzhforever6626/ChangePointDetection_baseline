@@ -1,0 +1,23 @@
+{
+  "command": [
+    "D:\\miniconda\\envs\\hkbu-breakpoint-detection\\python.exe",
+    "-m",
+    "breakpoint_detection.cli",
+    "data/A4Benchmark",
+    "--model",
+    "tscp2",
+    "--workers",
+    "4",
+    "--tscp2-python",
+    "D:\\miniconda\\envs\\dlnp\\python.exe",
+    "--tscp2-device",
+    "cpu",
+    "--output",
+    "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\logs\\baseline-verification\\tscp2\\run"
+  ],
+  "cwd": "D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction",
+  "started_at": "2026-10-17T10:35:08.918878+00:00",
+  "mode": "fixed checkpoint reload and inference; no training",
+  "exit_code": 0,
+  "finished_at": "2026-10-17T10:35:46.290134+00:00"
+}

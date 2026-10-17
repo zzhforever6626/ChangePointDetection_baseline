@@ -1,0 +1,7 @@
+model      phase  detection_margin       f1  tp  fp  fn
+tscp2 validation                24 0.564103  22  13  21
+tscp2 validation                50 0.564103  22  13  21
+tscp2 validation                75 0.577778  26  21  17
+tscp2       test                24 0.464000  29  17  50
+tscp2       test                50 0.464000  29  17  50
+tscp2       test                75 0.529032  41  35  38

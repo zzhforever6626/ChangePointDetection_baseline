@@ -5,6 +5,8 @@ dependencies:
   - python=3.10.21
   - pip
   - pip:
+      - setuptools==83.0.0
+      - wheel==0.47.0
       - numpy==2.2.6
       - pandas==2.3.3
       - python-dateutil==2.9.0.post0

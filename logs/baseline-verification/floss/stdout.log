@@ -1,0 +1,7 @@
+model      phase  detection_margin       f1  tp  fp  fn
+floss validation                24 0.155340   8  52  35
+floss validation                50 0.310680  16  44  27
+floss validation                75 0.466019  24  36  19
+floss       test                24 0.140704  14 106  65
+floss       test                50 0.251256  25  95  54
+floss       test                75 0.311558  31  89  48

@@ -1,0 +1,34 @@
+{
+  "embedding": 10,
+  "alpha": 0.01,
+  "regularization": 0.01,
+  "step": 1,
+  "folds": 5,
+  "seed": 0,
+  "min_distance": 1,
+  "coordinate": "s+n history/future boundary",
+  "preprocessing": "tscp2-a4",
+  "sigma_multipliers": [
+    0.6,
+    0.8,
+    1.0,
+    1.2,
+    1.4
+  ],
+  "fixed_claim": "2021 section 4.2 lambda=.01; window fixed from completed validation selection",
+  "adapters": "n=W, k10, demo alpha=.01, boundary coordinate, local peaks and validation threshold are supplements; no extra NMS",
+  "by_margin": {
+    "24": {
+      "window": 25,
+      "threshold": 34.97653253016169
+    },
+    "50": {
+      "window": 25,
+      "threshold": 34.97653253016169
+    },
+    "75": {
+      "window": 10,
+      "threshold": 52.3104435399189
+    }
+  }
+}
