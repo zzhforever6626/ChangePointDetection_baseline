@@ -4,6 +4,8 @@
 
 唯一配置为 [baseline_settings.json](src/breakpoint_detection/baseline_settings.json)。正式运行直接评分和评价，不再执行参数网格、阈值搜索或神经网络训练。
 
+本目录是可独立clone的Git仓库。GitHub远程地址尚未配置；实际提交历史从本次导出开始，原工作目录没有Git历史可继承。安装与复现步骤见 [REPRODUCIBILITY.md](REPRODUCIBILITY.md)，原始运行日志和指标对照见 [日志说明](logs/README.md)。
+
 ## 当前结果
 
 以下为固定配置的**事件 micro-F1**。验证集含20条序列、43个变点；测试集含40条序列、79个变点。
@@ -59,12 +61,12 @@ Python≥3.10，基础依赖NumPy、pandas；TSCP2推理需要PyTorch。
 
 ```powershell
 python -m pip install -e ".[test,tscp2]"
-run-baseline data\A4Benchmark --model all --workers 4 --tscp2-device cpu --reuse-scores results\yahoo-a4 --output experiments\runs\my-fixed-baselines
+python scripts/reproduce.py --output reproductions/my-run --tscp2-python PATH_TO_TORCH_PYTHON --workers 4
 ```
 
 `--reuse-scores` 复用固定传统模型的评分轨迹，先校验生成参数、算法源码、输入和轨迹哈希，再重新生成报警与评价；省略此项则重新计算传统模型评分。TSCP2始终校验并复载固定checkpoint重新推理，不重新训练。checkpoint路径与SHA-256在唯一配置中登记，运行需要保留 `results/yahoo-a4/tscp2/encoder.pt`。
 
-可用 `--model floss`、`rulsif`、`tscp2` 单独评价。可用 `--tscp2-python D:\miniconda\envs\dlnp\python.exe` 指定PyTorch环境。`--workers` 控制传统模型评分进程数；TSCP2使用2个CPU线程。
+底层 `run-baseline` 可用 `--model floss`、`rulsif`、`tscp2` 单独评价，`--tscp2-python` 指定PyTorch解释器。`--workers` 控制传统模型评分进程数；TSCP2使用2个CPU线程。复现脚本默认实际重算FLOSS、复用经哈希核验的RuLSIF评分并重新推理TSCP2；`--fresh-rulsif` 可重新计算全部RuLSIF密度评分。
 
 输出必须为新目录或空目录，不能覆盖正式结果。`--resume` 仅校验已完成运行的源码、输入及输出哈希；未完成运行须使用新目录。
 

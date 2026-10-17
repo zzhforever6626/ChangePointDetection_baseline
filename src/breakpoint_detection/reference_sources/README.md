@@ -1,9 +1,9 @@
-# 正式 baseline 参考源码
+# 正式baseline参考源码
 
-依据顺序为 **2024 明确且适用的设置 → 2021 明确且适用的设置 → 作者公开代码 → 必要项目适配**。原方法文献用于解释，不覆盖作者代码提供的缺省参数。正式设置由唯一的 [baseline_settings.json](../baseline_settings.json) 登记。
+来源文件及既有哈希原样保留；本说明按当前固定baseline更新。依据为2021论文明确适用要求、原方法及作者源码、登记的项目补充，唯一设置见 [baseline_settings.json](../baseline_settings.json)。
 
-- `rulsif`：作者 MATLAB 包，commit `496042e79b33c794cf2d6807496499763818508a`，保留 MIT 声明。目标论文未规定 α/k；当前用户明确选用历史α=.1、k=10分支，作者 `demo.m` 的α=.01仍保留为来源差异，不能称已确认原Yahoo α。2021 的λ=.01覆盖源码候选网格，W20→n20映射未确认。事件坐标为用户所选 `s+n`，原始前驱峰间距20为明确实验适配；源码绘图末点另存。
-- `floss`：用户提供的作者流式示例，原压缩包 SHA256 `3015fdbb0b9df8043251d0e73f8c8fd543f57deb4b531d684719cd542307b618`。六个MATLAB文件及Python核心保持原字节。窗口与距离来自2021；top-k=3、IAC和±5m抑制来自示例。当前用户明确选择固定缓冲672及min-max后加.001扰动的Yahoo适配；作者示例的原始尺度扰动与绘图后归一化保留为来源差异，不能称两者输入尺度相同。
-- [TSCP2](tscp2/README.md)：固定作者仓库及keras-tcn提交，论文明确要求覆盖冲突源码，原文件及许可保持。
+- RuLSIF：作者MATLAB提交 `496042e79b33c794cf2d6807496499763818508a`，MIT声明保留。当前λ=.01、demo α=.01、k10，按容差固定n25／25／10；比较边界s+n为项目映射。
+- FLOSS：作者流式示例六个MATLAB文件及Python核心原样保留。当前W25／25／55、buffer800、原尺度异常替换后.001扰动、top-k3、闭区间±5W。
+- TSCP2：固定作者与keras-tcn来源见 [manifest.json](tscp2/manifest.json)。当前W32、batch32、code16、lr.0003，训练更新BN统计、推理使用运行统计；固定385轮checkpoint。
 
-参考文件哈希见 `source-manifest.json` 与TSCP2的 `manifest.json`。未执行MATLAB二进制，不保证随机数、FFT、初始化逐位一致，不把移植称为完整原实验复现。
+原来源文件中默认参数不等于当前项目配置。未恢复完整作者Yahoo runner，不声称运行MATLAB二进制或逐位复现原作者训练。
