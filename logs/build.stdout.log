@@ -1,0 +1,224 @@
+running bdist_wheel
+running build
+running build_py
+creating build\lib\breakpoint_detection
+copying src\breakpoint_detection\alarm_adapter.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\author_floss_runner.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\cli.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\data.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\experiment.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\floss_runner.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\metrics.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\paper2021_runner.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\paper2021_worker.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\protocol.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\rulsif_runner.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\source_dataset.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\strict_runner.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\tscp2_adapter.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\tscp2_runner.py -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\__init__.py -> build\lib\breakpoint_detection
+creating build\lib\breakpoint_detection\models
+copying src\breakpoint_detection\models\author_floss.py -> build\lib\breakpoint_detection\models
+copying src\breakpoint_detection\models\author_rulsif.py -> build\lib\breakpoint_detection\models
+copying src\breakpoint_detection\models\rulsif.py -> build\lib\breakpoint_detection\models
+copying src\breakpoint_detection\models\tscp2.py -> build\lib\breakpoint_detection\models
+copying src\breakpoint_detection\models\__init__.py -> build\lib\breakpoint_detection\models
+creating build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\helpers.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\losses.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\main.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\TSCP2.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+creating build\lib\breakpoint_detection\reference_sources\tscp2\keras-tcn
+copying src\breakpoint_detection\reference_sources\tscp2\keras-tcn\tcn.py -> build\lib\breakpoint_detection\reference_sources\tscp2\keras-tcn
+creating build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\utils\analysis_helper.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\utils\DataHelper.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\utils\estimate_CPD.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\utils\yahoo_ds_helper.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+running egg_info
+creating src\hkbu_breakpoint_detection.egg-info
+writing src\hkbu_breakpoint_detection.egg-info\PKG-INFO
+writing dependency_links to src\hkbu_breakpoint_detection.egg-info\dependency_links.txt
+writing entry points to src\hkbu_breakpoint_detection.egg-info\entry_points.txt
+writing requirements to src\hkbu_breakpoint_detection.egg-info\requires.txt
+writing top-level names to src\hkbu_breakpoint_detection.egg-info\top_level.txt
+writing manifest file 'src\hkbu_breakpoint_detection.egg-info\SOURCES.txt'
+reading manifest file 'src\hkbu_breakpoint_detection.egg-info\SOURCES.txt'
+writing manifest file 'src\hkbu_breakpoint_detection.egg-info\SOURCES.txt'
+copying src\breakpoint_detection\baseline_settings.json -> build\lib\breakpoint_detection
+copying src\breakpoint_detection\reference_sources\source-manifest.json -> build\lib\breakpoint_detection\reference_sources
+copying src\breakpoint_detection\reference_sources\README.md -> build\lib\breakpoint_detection\reference_sources
+creating build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\rulsif\change_detection.m -> build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\rulsif\demo.m -> build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\rulsif\RelULSIF.m -> build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\rulsif\LICENSE -> build\lib\breakpoint_detection\reference_sources\rulsif
+creating build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\rulsif\lib\comp_dist.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\rulsif\lib\comp_med.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\rulsif\lib\kernel_gau.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\rulsif\lib\sliding_window.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+creating build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\getArcCurve.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\getAsymIAC.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\pammap_dataset.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\pick_k_minimum.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\stamp1DirSelf.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\stamp1DirSelfSlide.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\tscp2\helpers.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\losses.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\main.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\TSCP2.py -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\utils\analysis_helper.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\utils\DataHelper.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\utils\estimate_CPD.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\utils\yahoo_ds_helper.py -> build\lib\breakpoint_detection\reference_sources\tscp2\utils
+copying src\breakpoint_detection\reference_sources\tscp2\manifest.json -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\README.md -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\keras-tcn\tcn.py -> build\lib\breakpoint_detection\reference_sources\tscp2\keras-tcn
+copying src\breakpoint_detection\reference_sources\tscp2\keras-tcn\LICENSE -> build\lib\breakpoint_detection\reference_sources\tscp2\keras-tcn
+copying src\breakpoint_detection\reference_sources\README.md -> build\lib\breakpoint_detection\reference_sources
+copying src\breakpoint_detection\reference_sources\source-manifest.json -> build\lib\breakpoint_detection\reference_sources
+copying src\breakpoint_detection\reference_sources\floss\getArcCurve.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\getAsymIAC.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\pammap_dataset.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\pick_k_minimum.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\stamp1DirSelf.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\floss\stamp1DirSelfSlide.m -> build\lib\breakpoint_detection\reference_sources\floss
+copying src\breakpoint_detection\reference_sources\rulsif\LICENSE -> build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\rulsif\RelULSIF.m -> build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\rulsif\change_detection.m -> build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\rulsif\demo.m -> build\lib\breakpoint_detection\reference_sources\rulsif
+copying src\breakpoint_detection\reference_sources\tscp2\README.md -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\tscp2\manifest.json -> build\lib\breakpoint_detection\reference_sources\tscp2
+copying src\breakpoint_detection\reference_sources\rulsif\lib\comp_dist.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\rulsif\lib\comp_med.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\rulsif\lib\kernel_gau.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\rulsif\lib\sliding_window.m -> build\lib\breakpoint_detection\reference_sources\rulsif\lib
+copying src\breakpoint_detection\reference_sources\tscp2\keras-tcn\LICENSE -> build\lib\breakpoint_detection\reference_sources\tscp2\keras-tcn
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\breakpoint_detection
+copying build\lib\breakpoint_detection\alarm_adapter.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\author_floss_runner.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\baseline_settings.json -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\cli.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\data.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\experiment.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\floss_runner.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\metrics.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+creating build\bdist.win-amd64\wheel\breakpoint_detection\models
+copying build\lib\breakpoint_detection\models\author_floss.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\models
+copying build\lib\breakpoint_detection\models\author_rulsif.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\models
+copying build\lib\breakpoint_detection\models\rulsif.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\models
+copying build\lib\breakpoint_detection\models\tscp2.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\models
+copying build\lib\breakpoint_detection\models\__init__.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\models
+copying build\lib\breakpoint_detection\paper2021_runner.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\paper2021_worker.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\protocol.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+creating build\bdist.win-amd64\wheel\breakpoint_detection\reference_sources
+creating build\bdist.win-amd64\wheel\breakpoint_detection\reference_sources\floss
+copying build\lib\breakpoint_detection\reference_sources\floss\getArcCurve.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\floss
+copying build\lib\breakpoint_detection\reference_sources\floss\getAsymIAC.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\floss
+copying build\lib\breakpoint_detection\reference_sources\floss\pammap_dataset.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\floss
+copying build\lib\breakpoint_detection\reference_sources\floss\pick_k_minimum.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\floss
+copying build\lib\breakpoint_detection\reference_sources\floss\stamp1DirSelf.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\floss
+copying build\lib\breakpoint_detection\reference_sources\floss\stamp1DirSelfSlide.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\floss
+copying build\lib\breakpoint_detection\reference_sources\README.md -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources
+creating build\bdist.win-amd64\wheel\breakpoint_detection\reference_sources\rulsif
+copying build\lib\breakpoint_detection\reference_sources\rulsif\change_detection.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif
+copying build\lib\breakpoint_detection\reference_sources\rulsif\demo.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif
+creating build\bdist.win-amd64\wheel\breakpoint_detection\reference_sources\rulsif\lib
+copying build\lib\breakpoint_detection\reference_sources\rulsif\lib\comp_dist.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif\lib
+copying build\lib\breakpoint_detection\reference_sources\rulsif\lib\comp_med.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif\lib
+copying build\lib\breakpoint_detection\reference_sources\rulsif\lib\kernel_gau.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif\lib
+copying build\lib\breakpoint_detection\reference_sources\rulsif\lib\sliding_window.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif\lib
+copying build\lib\breakpoint_detection\reference_sources\rulsif\LICENSE -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif
+copying build\lib\breakpoint_detection\reference_sources\rulsif\RelULSIF.m -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\rulsif
+copying build\lib\breakpoint_detection\reference_sources\source-manifest.json -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources
+creating build\bdist.win-amd64\wheel\breakpoint_detection\reference_sources\tscp2
+copying build\lib\breakpoint_detection\reference_sources\tscp2\helpers.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2
+creating build\bdist.win-amd64\wheel\breakpoint_detection\reference_sources\tscp2\keras-tcn
+copying build\lib\breakpoint_detection\reference_sources\tscp2\keras-tcn\LICENSE -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2\keras-tcn
+copying build\lib\breakpoint_detection\reference_sources\tscp2\keras-tcn\tcn.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2\keras-tcn
+copying build\lib\breakpoint_detection\reference_sources\tscp2\losses.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2
+copying build\lib\breakpoint_detection\reference_sources\tscp2\main.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2
+copying build\lib\breakpoint_detection\reference_sources\tscp2\manifest.json -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2
+copying build\lib\breakpoint_detection\reference_sources\tscp2\README.md -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2
+copying build\lib\breakpoint_detection\reference_sources\tscp2\TSCP2.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2
+creating build\bdist.win-amd64\wheel\breakpoint_detection\reference_sources\tscp2\utils
+copying build\lib\breakpoint_detection\reference_sources\tscp2\utils\analysis_helper.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2\utils
+copying build\lib\breakpoint_detection\reference_sources\tscp2\utils\DataHelper.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2\utils
+copying build\lib\breakpoint_detection\reference_sources\tscp2\utils\estimate_CPD.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2\utils
+copying build\lib\breakpoint_detection\reference_sources\tscp2\utils\yahoo_ds_helper.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection\reference_sources\tscp2\utils
+copying build\lib\breakpoint_detection\rulsif_runner.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\source_dataset.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\strict_runner.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\tscp2_adapter.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\tscp2_runner.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+copying build\lib\breakpoint_detection\__init__.py -> build\bdist.win-amd64\wheel\.\breakpoint_detection
+running install_egg_info
+Copying src\hkbu_breakpoint_detection.egg-info to build\bdist.win-amd64\wheel\.\hkbu_breakpoint_detection-0.3.0-py3.10.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\hkbu_breakpoint_detection-0.3.0.dist-info\WHEEL
+creating 'D:\\work\\Python_work\\HKBU_Breakpoint-Detection\\github-clone\\HKBU-Breakpoint-Detection-Reproduction\\reproductions\\wheels\\.tmp-d1y08niy\\hkbu_breakpoint_detection-0.3.0-py3-none-any.whl' and adding 'build\\bdist.win-amd64\\wheel' to it
+adding 'breakpoint_detection/__init__.py'
+adding 'breakpoint_detection/alarm_adapter.py'
+adding 'breakpoint_detection/author_floss_runner.py'
+adding 'breakpoint_detection/baseline_settings.json'
+adding 'breakpoint_detection/cli.py'
+adding 'breakpoint_detection/data.py'
+adding 'breakpoint_detection/experiment.py'
+adding 'breakpoint_detection/floss_runner.py'
+adding 'breakpoint_detection/metrics.py'
+adding 'breakpoint_detection/paper2021_runner.py'
+adding 'breakpoint_detection/paper2021_worker.py'
+adding 'breakpoint_detection/protocol.py'
+adding 'breakpoint_detection/rulsif_runner.py'
+adding 'breakpoint_detection/source_dataset.py'
+adding 'breakpoint_detection/strict_runner.py'
+adding 'breakpoint_detection/tscp2_adapter.py'
+adding 'breakpoint_detection/tscp2_runner.py'
+adding 'breakpoint_detection/models/__init__.py'
+adding 'breakpoint_detection/models/author_floss.py'
+adding 'breakpoint_detection/models/author_rulsif.py'
+adding 'breakpoint_detection/models/rulsif.py'
+adding 'breakpoint_detection/models/tscp2.py'
+adding 'breakpoint_detection/reference_sources/README.md'
+adding 'breakpoint_detection/reference_sources/source-manifest.json'
+adding 'breakpoint_detection/reference_sources/floss/getArcCurve.m'
+adding 'breakpoint_detection/reference_sources/floss/getAsymIAC.m'
+adding 'breakpoint_detection/reference_sources/floss/pammap_dataset.m'
+adding 'breakpoint_detection/reference_sources/floss/pick_k_minimum.m'
+adding 'breakpoint_detection/reference_sources/floss/stamp1DirSelf.m'
+adding 'breakpoint_detection/reference_sources/floss/stamp1DirSelfSlide.m'
+adding 'breakpoint_detection/reference_sources/rulsif/LICENSE'
+adding 'breakpoint_detection/reference_sources/rulsif/RelULSIF.m'
+adding 'breakpoint_detection/reference_sources/rulsif/change_detection.m'
+adding 'breakpoint_detection/reference_sources/rulsif/demo.m'
+adding 'breakpoint_detection/reference_sources/rulsif/lib/comp_dist.m'
+adding 'breakpoint_detection/reference_sources/rulsif/lib/comp_med.m'
+adding 'breakpoint_detection/reference_sources/rulsif/lib/kernel_gau.m'
+adding 'breakpoint_detection/reference_sources/rulsif/lib/sliding_window.m'
+adding 'breakpoint_detection/reference_sources/tscp2/README.md'
+adding 'breakpoint_detection/reference_sources/tscp2/TSCP2.py'
+adding 'breakpoint_detection/reference_sources/tscp2/helpers.py'
+adding 'breakpoint_detection/reference_sources/tscp2/losses.py'
+adding 'breakpoint_detection/reference_sources/tscp2/main.py'
+adding 'breakpoint_detection/reference_sources/tscp2/manifest.json'
+adding 'breakpoint_detection/reference_sources/tscp2/keras-tcn/LICENSE'
+adding 'breakpoint_detection/reference_sources/tscp2/keras-tcn/tcn.py'
+adding 'breakpoint_detection/reference_sources/tscp2/utils/DataHelper.py'
+adding 'breakpoint_detection/reference_sources/tscp2/utils/analysis_helper.py'
+adding 'breakpoint_detection/reference_sources/tscp2/utils/estimate_CPD.py'
+adding 'breakpoint_detection/reference_sources/tscp2/utils/yahoo_ds_helper.py'
+adding 'hkbu_breakpoint_detection-0.3.0.dist-info/METADATA'
+adding 'hkbu_breakpoint_detection-0.3.0.dist-info/WHEEL'
+adding 'hkbu_breakpoint_detection-0.3.0.dist-info/entry_points.txt'
+adding 'hkbu_breakpoint_detection-0.3.0.dist-info/top_level.txt'
+adding 'hkbu_breakpoint_detection-0.3.0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+hkbu_breakpoint_detection-0.3.0-py3-none-any.whl

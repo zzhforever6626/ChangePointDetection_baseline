@@ -49,6 +49,8 @@ python scripts/verify.py reproductions/my-run
 
 ## 数据与资产
 
+已使用本机已安装的setuptools后端离线构建wheel，通过记录见 `logs/build.stdout.log` 和 `logs/build-process.json`。一次没有输出而被终止的pip wheel尝试另保存在 `logs/initial-build`，不作为成功安装证据。wheel仅包含代码与包内参考文件；科学资产随完整Git仓库提供，因此日常复现采用仓库根目录的editable安装。
+
 数据、checkpoint和固定传统模型轨迹均随仓库保存，无需访问原工作目录。唯一配置仍为 `baseline_settings.json`。评分资产清单是生成条件和完整性证据，不构成第二套默认配置。数据与参考源码的来源见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 Git保留文件原字节，避免换行自动转换破坏源代码哈希。数据集切分、事件冲突处理与协议限制见README；测试已多次查看，不是新盲测，也不是论文原作者完整runner或论文数值的严格复现。

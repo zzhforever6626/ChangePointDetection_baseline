@@ -1,0 +1,9 @@
+{
+  "command": [
+    "D:\\miniconda\\envs\\hkbu-breakpoint-detection\\python.exe",
+    "-c",
+    "from setuptools.build_meta import build_wheel; print(build_wheel('reproductions/wheels'))"
+  ],
+  "started_at": "2026-10-17T10:38:46.050005+00:00",
+  "exit_code": 0
+}

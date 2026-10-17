@@ -10,5 +10,6 @@
 - [verification.json](baseline-verification/verification.json)：独立逐文件匹配和汇总核验报告。
 - `pytest.stdout.log`、`pytest.stderr.log`、`pytest.xml`：本导出仓库的真实测试记录。
 - `initial-check/`：首次发现旧pytest临时目录路径问题的原始失败记录；修复后的通过记录在本目录，失败未被覆盖或隐藏。
+- `build.stdout.log`、`build.stderr.log`、`build-process.json`：离线setuptools wheel构建记录；`initial-build/` 保存未完成pip wheel尝试的退出记录。
 
 运行的默认模式为FLOSS重算、RuLSIF核验评分回放及重新报警、TSCP2固定checkpoint复载推理。RuLSIF全量密度评分及神经训练未在此次日志中重新执行；TSCP2原始训练日志单独保留在 `provenance/original-tscp2-training`。
